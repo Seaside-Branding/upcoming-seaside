@@ -626,18 +626,48 @@
     footer {
       background: linear-gradient(90deg, #5f0101 0%, #7a0a0a 50%, #5f0101 100%);
       color: #EFD1A8;
+      font-weight: 400;
       padding: 20px 0;
       margin-top: 24px;
     }
 
     footer p {
       margin: 8px 0 0;
+      color: #EFD1A8;
     }
 
     footer a {
-      color: #fff;
+      color: #EFD1A8;
       text-decoration: underline;
       text-underline-offset: 2px;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      color: #ffffff;
+    }
+
+    .footer-credit {
+      margin-top: 10px;
+    }
+
+    .footer-credit a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .footer-credit a:hover,
+    .footer-credit a:focus {
+      text-decoration: underline;
+    }
+
+    .footer-credit-logo {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
     }
 
     .cookie-banner {
@@ -1276,6 +1306,12 @@
     <div class="container text-center">
       <a href="GDPR_MEDIPRO.pdf" target="_blank">Click aici pentru politica de confidențialitate</a>
       <p>&copy; Copyright <script>document.write(new Date().getFullYear());</script> - <a class="maps" href="https://www.google.com/maps/dir//Strada+Vasile+Lasc%C4%83r+14+Bucure%C8%99ti+030167/@44.4373636,26.1075746,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40b1ff3825660d69:0x8a3aba5f99f3f81f!2m2!1d26.1075746!2d44.4373636" target="_blank">MediPro Consult S.R.L.</a></p>
+      <p class="footer-credit">
+        <a href="https://seasidebranding.com" target="_blank" rel="noopener noreferrer">
+          <img src="img/seasidebranding.svg" alt="Seaside Branding logo" class="footer-credit-logo">
+          <span>Made with &#10084; by Seaside Branding</span>
+        </a>
+      </p>
     </div>
   </footer>
 
