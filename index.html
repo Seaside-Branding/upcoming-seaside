@@ -93,6 +93,7 @@
   <link rel="stylesheet" href="css/fontello.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="color/default.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap">
 
   <style>
     :root {
@@ -111,6 +112,10 @@
       scroll-behavior: smooth;
       width: 100%;
       overflow-x: hidden;
+    }
+
+    section[id] {
+      scroll-margin-top: 72px;
     }
 
     body {
@@ -137,6 +142,8 @@
 
     #site-nav {
       background: #650202;
+      overflow: visible;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
     }
 
     .nav-container {
@@ -154,11 +161,17 @@
       align-items: center;
       gap: 10px;
       color: #fff;
-      font-weight: 700;
-      font-size: 17px;
       letter-spacing: 0.02em;
       text-decoration: none;
       flex-shrink: 0;
+    }
+
+    .nav-brand span {
+      font-family: 'Kaushan Script',  cursive;
+      font-size: clamp(23px, 2.1vw, 30px);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1;
     }
 
     .nav-brand:hover,
@@ -190,15 +203,18 @@
     }
 
     .nav-link {
-      display: block;
+      display: flex;
+      align-items: center;
+      height: 64px;
       color: var(--mp-nav-link);
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.09em;
       font-weight: 700;
-      padding: 22px 16px;
+      padding: 0 16px;
+      line-height: 1;
       text-decoration: none;
-      transition: background .2s ease, color .2s ease;
+      transition: background .26s ease, color .26s ease, transform .26s ease;
       white-space: nowrap;
     }
 
@@ -207,6 +223,7 @@
     .nav-link.active {
       color: #fff;
       background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
       text-decoration: none;
     }
 
@@ -297,7 +314,7 @@
     }
 
     .hero-copy h1 {
-      color: #fff;
+      color: #fff9ec;
       margin: 0 0 14px;
       font-size: clamp(31px, 3.6vw, 54px);
       line-height: 1.14;
@@ -310,7 +327,7 @@
       font-size: clamp(17px, 1.8vw, 35px);
       line-height: 1.45;
       margin: 0;
-      color: #fde8d4;
+      color: #fff9ec;
       max-width: 41ch;
       text-wrap: pretty;
     }
@@ -328,7 +345,7 @@
     .hero-cta {
       display: inline-block;
       margin-top: 24px;
-      background: #fff;
+      background: #EFD1A8;
       color: #650202;
       font-weight: 700;
       font-size: 15px;
@@ -580,6 +597,14 @@
       box-shadow: 0 0 0 3px rgba(101, 2, 2, 0.12);
     }
 
+    #contact-form .form-group {
+      margin-bottom: 18px;
+    }
+
+    #contact-form .row.marginbot-20 {
+      margin-bottom: 18px;
+    }
+
     .privacy-note {
       margin: 10px 0 14px;
       font-size: 14px;
@@ -807,8 +832,18 @@
       }
 
       .nav-link {
+        display: block;
+        height: auto;
         padding: 13px 20px;
+        line-height: 1.35;
+        transform: none;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-link:hover,
+      .nav-link:focus,
+      .nav-link.active {
+        transform: none;
       }
 
       .hero {
@@ -862,6 +897,14 @@
       .hero-quote {
         font-size: 15px;
       }
+
+      #contact-form .row.marginbot-20 > [class*="col-"] {
+        margin-bottom: 12px;
+      }
+
+      #contact-form .row.marginbot-20 > [class*="col-"]:last-child {
+        margin-bottom: 0;
+      }
     }
 
     @media (max-width: 480px) {
@@ -884,7 +927,7 @@
       }
 
       .nav-brand span {
-        font-size: 14px;
+        font-size: 20px;
       }
 
       .nav-logo {
@@ -931,6 +974,12 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
+    }
+    .nivo-lightbox-theme-default .nivo-lightbox-title{
+      background-color:#EFD1A8 !important;
+      color: #650202 !important;
+      font-family: 'Roboto Condensed', sans-serif !important;
+      font-weight: 500 !important;
     }
   </style>
 </head>
@@ -1182,7 +1231,6 @@
                 <label for="name" class="sr-only">Nume Prenume</label>
                 <input type="text" class="form-control input-lg" id="name" placeholder="Nume Prenume" required>
               </div>
-              &nbsp;
               <div class="col-md-6">
                 <label for="email" class="sr-only">Email</label>
                 <input type="email" class="form-control input-lg" id="email" placeholder="Email" required>
@@ -1468,45 +1516,117 @@
       var siteHeader = document.getElementById('site-header');
       var navToggle  = document.getElementById('nav-toggle');
       var navMenu    = document.getElementById('nav-menu');
-      var navLinks   = navMenu ? navMenu.querySelectorAll('.nav-link') : [];
+      var navLinks   = navMenu ? navMenu.querySelectorAll('a.nav-link') : [];
+      var navBrand   = document.querySelector('.nav-brand');
       var lastScroll = 0;
       var navTicking = false;
+
+      function isMobileNav() {
+        return window.matchMedia('(max-width: 768px)').matches;
+      }
 
       function closeMenu() {
         if (navMenu)   navMenu.classList.remove('open');
         if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
       }
 
+      function openMenu() {
+        if (!navMenu || !navToggle) {
+          return;
+        }
+        navMenu.classList.add('open');
+        navToggle.setAttribute('aria-expanded', 'true');
+        if (siteHeader) {
+          siteHeader.classList.remove('nav-hidden');
+        }
+      }
+
+      function toggleMenu(forceOpen) {
+        if (!navMenu || !navToggle) {
+          return;
+        }
+
+        var open = typeof forceOpen === 'boolean'
+          ? forceOpen
+          : !navMenu.classList.contains('open');
+
+        if (open) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      }
+
       if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function () {
-          var open = navMenu.classList.toggle('open');
-          navToggle.setAttribute('aria-expanded', String(open));
-          if (open && siteHeader) siteHeader.classList.remove('nav-hidden');
+        navToggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          toggleMenu();
         });
       }
 
-      navLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-          var target = document.querySelector(this.getAttribute('href'));
-          if (!target) return;
-          e.preventDefault();
-          closeMenu();
-          var offset = siteHeader ? siteHeader.offsetHeight : 64;
-          window.scrollTo({
-            top: target.getBoundingClientRect().top + window.pageYOffset - offset,
-            behavior: 'smooth'
-          });
+      function getHashFromHref(href) {
+        if (!href) {
+          return '';
+        }
+
+        var hashIndex = href.indexOf('#');
+        if (hashIndex === -1) {
+          return '';
+        }
+
+        return href.slice(hashIndex);
+      }
+
+      if (navMenu) {
+        navMenu.addEventListener('click', function (e) {
+          var el = e.target;
+          while (el && el !== navMenu) {
+            if (el.tagName === 'A' && el.classList.contains('nav-link')) {
+              closeMenu();
+              return;
+            }
+            el = el.parentNode;
+          }
         });
+      }
+
+      if (navBrand) {
+        navBrand.addEventListener('click', function () {
+          closeMenu();
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        if (!isMobileNav() || !navMenu || !navToggle) {
+          return;
+        }
+
+        if (!navMenu.classList.contains('open')) {
+          return;
+        }
+
+        var clickInsideMenu = navMenu.contains(e.target);
+        var clickOnToggle = navToggle.contains(e.target);
+        if (!clickInsideMenu && !clickOnToggle) {
+          closeMenu();
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (!isMobileNav()) {
+          closeMenu();
+        }
       });
 
       function updateActiveLink() {
         var scrollY  = window.pageYOffset + 100;
         var activeId = '';
-        document.querySelectorAll('section[id]').forEach(function (s) {
+        Array.prototype.forEach.call(document.querySelectorAll('section[id]'), function (s) {
           if (scrollY >= s.offsetTop) activeId = s.id;
         });
-        navLinks.forEach(function (link) {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
+        Array.prototype.forEach.call(navLinks, function (link) {
+          var linkHash = getHashFromHref(link.getAttribute('href') || '');
+          link.classList.toggle('active', linkHash === '#' + activeId);
         });
       }
 
