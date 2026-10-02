@@ -1,0 +1,3 @@
+# Ignore the settings.php file for the witsec mailform
+assets/witsec-mailform/settings.php
+settings.php

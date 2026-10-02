@@ -1,0 +1,10 @@
+@font-face {
+   font-family: 'IntroRust-Base';
+   font-display: swap;
+   src: url('IntroRust-Base/font.ttf');
+}
+@font-face {
+   font-family: 'Oswald-VariableFont_wght';
+   font-display: swap;
+   src: url('Oswald-VariableFont_wght/font.ttf');
+}
