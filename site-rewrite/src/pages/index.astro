@@ -1,0 +1,22 @@
+---
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+
+const source = await readFile(resolve(process.cwd(), 'index.html'), 'utf8');
+const headContent = source.match(/<head[^>]*>([\s\S]*?)<\/head>/i)?.[1];
+const bodyContent = source.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1];
+
+if (!headContent || !bodyContent) {
+  throw new Error('The homepage prototype must contain head and body markup.');
+}
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <Fragment set:html={headContent} />
+    <script>
+      import '../intro/main';
+    </script>
+  </head>
+  <body set:html={bodyContent}></body>
+</html>

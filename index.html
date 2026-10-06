@@ -1,1166 +1,683 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html  lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dream it. Film it. Create it. Zoom In Film Festival returns in February 2027.">
-  <meta name="theme-color" content="#550000">
-  <title>Zoom In Film Festival 2027</title>
-  <link rel="icon" href="../assets/images/logobg-128x128.png" type="image/png">
-  <link rel="stylesheet" href="https://unpkg.com/css-peeps@1.0.1/css-peeps.compat.css">
-  <script>
-    (() => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      try {
-        if (sessionStorage.getItem('ziff-2027-intro-seen')) return;
-        sessionStorage.setItem('ziff-2027-intro-seen', '1');
-        document.documentElement.classList.add('intro-pending');
-      } catch (_) {
-        return;
-      }
-    })();
-  </script>
-  <style>
-    @font-face {
-      font-family: IntroRust;
-      src: url("../fonts/IntroRust-Base/font.ttf") format("truetype");
-      font-display: swap;
-    }
-    @font-face {
-      font-family: OswaldLocal;
-      src: url("../fonts/Oswald-VariableFont_wght/font.ttf") format("truetype");
-      font-display: swap;
-    }
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logobg-128x128.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>ZIFF 2027</title>
+  <link rel="stylesheet" href="assets/font-awesome-brands/../css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/font-awesome-brands/css/brands.min.css">
+  <link rel="stylesheet" href="assets/material-design/css/material-icons.min.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/parallax/jarallax.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link href="assets/fonts/style.css" rel="stylesheet">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=spVdn6"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=spVdn6" type="text/css">
 
-    :root {
-      color-scheme: light;
-      --oxblood: #550000;
-      --rose: #C27A7A;
-      --coral: #FF8F7A;
-      --signal-red: #550000;
-      --ice: #DCDEFF;
-      --violet: #C27A7A;
-      --ink: #550000;
-      --butter: #C27A7A;
-      --gold: #FF8F7A;
-      --paper: #F3F4FF;
-      --line: rgba(85, 0, 0, .22);
-      --serif: "OswaldLocal", "Arial Narrow", sans-serif;
-      --sans: "OswaldLocal", "Arial Narrow", sans-serif;
-      --display: "IntroRust", sans-serif;
-      --nav-height: 76px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 18px;
-      line-height: 1.5;
-      overflow-x: hidden;
-    }
-    body.menu-open { overflow: hidden; }
-    a { color: inherit; }
-    button, input, textarea { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible {
-      outline: 3px solid var(--signal-red);
-      outline-offset: 4px;
-    }
-    img { display: block; max-width: 100%; }
-    ::selection { color: var(--ink); background: var(--gold); }
-
-    .progress-track {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 100;
-      height: 5px;
-      background: transparent;
-      pointer-events: none;
-    }
-    .progress-value { width: 0; height: 100%; background: var(--signal-red); transform-origin: left; }
-
-    .topline {
-      min-height: 33px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4px 16px;
-      color: var(--ice);
-      background: var(--oxblood);
-      border-bottom: 2px solid var(--coral);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      text-align: center;
-      text-transform: uppercase;
-    }
-    .topline span { margin-left: 8px; font-weight: 400; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      min-height: var(--nav-height);
-      background: var(--oxblood);
-      border-bottom: 1px solid rgba(220,222,255,.22);
-      transition: transform .28s ease, background-color .28s ease;
-    }
-    .site-header.is-hidden { transform: translateY(-105%); }
-    .nav-wrap {
-      width: min(1380px, calc(100% - 56px));
-      min-height: var(--nav-height);
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-    .wordmark {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      flex: 0 0 auto;
-    }
-    .wordmark img { width: 120px; height: 54px; padding: 4px 8px; background: var(--ice); object-fit: contain; }
-    .wordmark-text {
-      font: 24px/1 var(--display);
-      color: var(--oxblood);
-      letter-spacing: 0;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: clamp(14px, 2vw, 30px);
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .nav-links a {
-      position: relative;
-      display: inline-block;
-      padding: 8px 0;
-      color: var(--ice);
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    .nav-links a::after {
-      position: absolute;
-      right: 0;
-      bottom: 2px;
-      left: 0;
-      height: 3px;
-      background: var(--coral);
-      content: "";
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform .22s ease;
-    }
-    .nav-links a:hover::after, .nav-links a[aria-current="page"]::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    .nav-ticket, .button {
-      display: inline-flex;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 20px;
-      border: 2px solid var(--ink);
-      border-radius: 2px;
-      background: var(--ink);
-      color: var(--ice);
-      font-size: 14px;
-      font-weight: 700;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: color .18s ease, background-color .18s ease, transform .18s ease, box-shadow .18s ease;
-    }
-    .site-header .nav-ticket { border-color: var(--coral); background: transparent; color: var(--ice); }
-    .site-header .nav-ticket:hover { background: var(--coral); color: var(--oxblood); }
-    .nav-ticket:hover, .button:hover { background: var(--gold); color: var(--ink); transform: translateY(-3px); box-shadow: 4px 4px 0 var(--signal-red); }
-    .button--coral { border-color: var(--coral); background: var(--coral); color: var(--oxblood); }
-    .button--coral:hover { border-color: var(--gold); background: var(--gold); color: var(--ink); }
-    .button--outline { background: transparent; color: var(--ink); }
-    .button--outline:hover { background: var(--ink); color: var(--ice); }
-    .menu-toggle { display: none; }
-
-    .hero {
-      position: relative;
-      min-height: min(700px, calc(100svh - 210px));
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(320px, .98fr);
-      align-items: center;
-      padding: 58px max(6.5vw, calc((100vw - 1380px) / 2)) 72px;
-      background: var(--oxblood);
-      isolation: isolate;
-    }
-    .hero::before {
-      position: absolute;
-      z-index: -1;
-      top: 10%;
-      left: 52%;
-      width: 62vw;
-      height: 62vw;
-      max-width: 900px;
-      max-height: 900px;
-      border: 1px solid rgba(255, 143, 122, .22);
-      border-radius: 50%;
-      content: "";
-    }
-    .hero-copy { position: relative; z-index: 2; max-width: 680px; padding: 26px 0 40px; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 22px;
-      color: var(--coral);
-      font-size: 15px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .eyebrow::before { width: 34px; height: 3px; background: var(--signal-red); content: ""; }
-    h1, h2, h3, p { margin-top: 0; }
-    .hero h1 {
-      max-width: 760px;
-      margin: 0 0 20px -5px;
-      color: var(--ice);
-      font: 88px/.83 var(--display);
-      text-transform: uppercase;
-    }
-    .hero h1 span { display: block; }
-    .hero h1 span:last-child { color: var(--coral); }
-    .hero-line {
-      max-width: 420px;
-      margin: 0 0 26px;
-      color: var(--ice);
-      font: 28px/1.12 var(--serif);
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-art {
-      position: relative;
-      justify-self: center;
-      width: min(100%, 560px);
-      aspect-ratio: 1.05;
-      padding: 12px;
-      background: var(--coral);
-      box-shadow: 18px 18px 0 var(--rose), 32px 32px 0 var(--paper);
-      transform: rotate(2deg);
-      transition: transform .45s cubic-bezier(.2,.8,.2,1);
-    }
-    .hero-art:hover { transform: rotate(0deg) translateY(-8px); }
-    .hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
-    .hero-sticker {
-      position: absolute;
-      right: -25px;
-      bottom: 34px;
-      z-index: 2;
-      width: 126px;
-      height: 126px;
-      display: grid;
-      align-content: center;
-      justify-items: center;
-      border-radius: 50%;
-      background: var(--violet);
-      color: var(--paper);
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.15;
-      text-align: center;
-      text-transform: uppercase;
-      transform: rotate(9deg);
-      animation: sticker-pop .75s .45s both cubic-bezier(.18,.89,.32,1.28);
-    }
-    .hero-sticker strong { display: block; font: 25px/1.1 var(--display); }
-    .hero-scroll {
-      position: absolute;
-      bottom: 18px;
-      left: 50%;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--ice);
-      font-size: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-      transform: translateX(-50%);
-    }
-    .hero-scroll span { display: grid; width: 25px; height: 25px; place-items: center; border: 1px solid currentColor; border-radius: 50%; animation: bob 1.4s ease-in-out infinite; }
-
-    .ticker {
-      overflow: hidden;
-      padding: 14px 0;
-      background: var(--coral);
-      color: var(--oxblood);
-    }
-    .ticker-track { display: flex; width: max-content; animation: ticker 28s linear infinite; }
-    .ticker:hover .ticker-track { animation-play-state: paused; }
-    .ticker-item { display: inline-flex; align-items: center; gap: 22px; padding: 0 22px; font: 23px/1 var(--display); white-space: nowrap; }
-    .ticker-item b { color: var(--oxblood); font: 24px/1 var(--sans); }
-
-    .section { padding: 112px 28px; }
-    .container { width: min(1180px, 100%); margin-inline: auto; }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 42px; }
-    .section-kicker { margin-bottom: 12px; color: var(--oxblood); font-size: 14px; font-weight: 700; text-transform: uppercase; }
-    .section-title { max-width: 780px; margin-bottom: 0; color: var(--ink); font: 58px/.98 var(--display); text-transform: uppercase; }
-    .section-title em { color: var(--signal-red); font-style: normal; }
-    .section-intro { max-width: 430px; margin-bottom: 0; font: 19px/1.45 var(--serif); }
-
-    .choose { background: var(--butter); }
-    .choice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .choice {
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding: 24px;
-      border: 1px solid var(--ink);
-      background: var(--butter);
-      color: var(--ink);
-      text-align: left;
-      cursor: pointer;
-      transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
-    }
-    .choice:hover, .choice[aria-pressed="true"] { background: var(--ice); box-shadow: 7px 7px 0 var(--rose); transform: translate(-3px,-3px); }
-    .choice-number { color: var(--oxblood); font-size: 14px; font-weight: 700; }
-    .choice-title { max-width: 270px; font: 34px/.98 var(--display); text-transform: uppercase; }
-    .choice-arrow { align-self: flex-end; font-size: 26px; transition: transform .2s ease; }
-    .choice:hover .choice-arrow, .choice[aria-pressed="true"] .choice-arrow { transform: translate(4px,-4px); }
-    .route-result {
-      min-height: 85px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      margin-top: 22px;
-      padding: 18px 20px;
-      border-left: 7px solid var(--signal-red);
-      background: var(--paper);
-    }
-    .route-result p { margin: 0; }
-    .route-result strong { color: var(--oxblood); }
-    .route-shuffle { flex: 0 0 auto; border: 0; background: transparent; color: var(--oxblood); font-weight: 700; cursor: pointer; }
-    .route-shuffle:hover { color: var(--signal-red); }
-
-    .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 7vw; }
-    .photo-frame { position: relative; padding: 12px; background: var(--violet); }
-    .photo-frame::before { position: absolute; top: -14px; left: -14px; width: 66px; height: 66px; background: var(--coral); content: ""; }
-    .photo-frame img { position: relative; z-index: 1; width: 100%; aspect-ratio: 1.16; object-fit: cover; }
-    .photo-caption { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; color: var(--ink); font-size: 13px; font-weight: 700; text-transform: uppercase; }
-    .copy-block h2 { margin-bottom: 22px; color: var(--oxblood); font: 54px/.95 var(--display); text-transform: uppercase; }
-    .copy-block p { max-width: 620px; margin-bottom: 18px; font: 19px/1.55 var(--serif); }
-    .copy-block .button { margin-top: 9px; }
-
-    .story { overflow: hidden; background: var(--ink); color: var(--ice); }
-    .story .section-kicker { color: var(--coral); }
-    .story .section-title { color: var(--ice); }
-    .story .section-title em { color: var(--coral); }
-    .story-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 8vw; }
-    .story-copy p { max-width: 600px; color: var(--ice); font: 20px/1.5 var(--serif); }
-    .story-copy .button { margin-top: 14px; }
-    .story-photo { position: relative; }
-    .story-photo img { width: 100%; aspect-ratio: 1.25; object-fit: cover; }
-    .story-photo::after { position: absolute; top: 18px; right: -18px; bottom: -18px; left: 18px; z-index: -1; border: 2px solid var(--coral); content: ""; }
-    .edition-stamp { position: absolute; top: -22px; left: -30px; z-index: 2; display: grid; width: 96px; height: 96px; place-items: center; border-radius: 50%; background: var(--gold); color: var(--ink); font: 20px/1 var(--display); text-align: center; transform: rotate(-12deg); }
-
-    .ticket-section { background: var(--coral); }
-    .ticket-heading { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px; margin-bottom: 32px; }
-    .ticket-heading .section-title { color: var(--oxblood); }
-    .ticket-heading .section-kicker { color: var(--ink); }
-    .ticket-shell { min-height: 160px; padding: 24px; border: 2px solid var(--ink); background: var(--paper); }
-    .ticket-shell pretix-widget { display: block; min-height: 90px; }
-    .ticket-fallback { margin: 14px 0 0; }
-    .ticket-fallback a { color: var(--oxblood); font-weight: 700; }
-    .no-script-note { margin: 0; }
-
-    .judges { background: var(--paper); }
-    .judge-list { border-top: 2px solid var(--ink); }
-    .judge-item { border-bottom: 1px solid var(--line); }
-    .judge-item summary { display: grid; grid-template-columns: 44px 64px 1fr auto; align-items: center; gap: 14px; padding: 20px 4px; cursor: pointer; list-style: none; }
-    .judge-item summary::-webkit-details-marker { display: none; }
-    .judge-num { color: var(--signal-red); font-size: 14px; font-weight: 700; }
-    .judge-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
-    .judge-name { color: var(--ink); font: 30px/1.05 var(--display); text-transform: uppercase; }
-    .judge-toggle { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid var(--ink); border-radius: 50%; color: var(--oxblood); font-size: 22px; transition: transform .2s ease, background .2s ease; }
-    .judge-item[open] .judge-toggle { background: var(--gold); transform: rotate(45deg); }
-    .judge-bio { max-width: 780px; padding: 0 60px 24px 82px; font: 18px/1.55 var(--serif); }
-
-    .newsletter {
-      position: relative;
-      overflow: hidden;
-      background: var(--oxblood);
-      color: var(--paper);
-    }
-    .newsletter::before, .newsletter::after { position: absolute; width: 270px; height: 270px; border: 1px solid rgba(220,222,255,.35); border-radius: 50%; content: ""; }
-    .newsletter::before { top: -130px; right: 8%; }
-    .newsletter::after { bottom: -210px; left: 12%; }
-    .newsletter-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
-    .newsletter .section-kicker { color: var(--coral); }
-    .newsletter .section-title { color: var(--paper); }
-    .newsletter .section-title em { color: var(--coral); }
-    .newsletter-copy { max-width: 470px; margin: 20px 0 0; font: 19px/1.45 var(--serif); }
-    .newsletter-form { padding: 24px; background: var(--paper); color: var(--ink); }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .field { display: grid; gap: 6px; margin-bottom: 14px; }
-    .field label { font-size: 13px; font-weight: 700; text-transform: uppercase; }
-    .field input, .field textarea { width: 100%; min-height: 48px; padding: 10px 12px; border: 1px solid var(--ink); border-radius: 0; background: var(--paper); color: var(--ink); }
-    .field textarea { min-height: 130px; resize: vertical; }
-    .consent-check { display: flex; align-items: flex-start; gap: 10px; margin: 4px 0 18px; font-size: 14px; }
-    .consent-check input { width: 18px; height: 18px; flex: 0 0 auto; margin: 2px 0 0; accent-color: var(--violet); }
-    .newsletter-form .button { width: 100%; border-color: var(--ink); }
-
-    .gallery-section { background: var(--paper); }
-    .gallery-topline { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 34px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 112px; gap: 12px; }
-    .gallery-tile { position: relative; overflow: hidden; padding: 0; border: 0; background: var(--rose); cursor: zoom-in; }
-    .gallery-tile:nth-child(1), .gallery-tile:nth-child(5) { grid-column: span 5; grid-row: span 3; }
-    .gallery-tile:nth-child(2), .gallery-tile:nth-child(6) { grid-column: span 4; grid-row: span 2; }
-    .gallery-tile:nth-child(3), .gallery-tile:nth-child(7) { grid-column: span 3; grid-row: span 2; }
-    .gallery-tile:nth-child(4), .gallery-tile:nth-child(8) { grid-column: span 4; grid-row: span 1; }
-    .gallery-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.2,1), filter .3s ease; }
-    .gallery-tile:hover img { transform: scale(1.07); filter: saturate(1.15); }
-    .gallery-tile::after { position: absolute; inset: auto 0 0; height: 38%; background: linear-gradient(transparent, rgba(85,0,0,.72)); content: ""; opacity: 0; transition: opacity .2s ease; }
-    .gallery-tile:hover::after, .gallery-tile:focus-visible::after { opacity: 1; }
-    .gallery-count { margin-top: 17px; color: var(--oxblood); font-size: 14px; font-weight: 700; text-transform: uppercase; }
-
-    .contact-band { padding: 82px 28px; background: var(--gold); }
-    .contact-inner { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 42px; }
-    .contact-inner h2 { max-width: 690px; margin: 0; color: var(--oxblood); font: 48px/.98 var(--display); text-transform: uppercase; }
-    .contact-inner p { margin: 12px 0 0; font: 18px/1.4 var(--serif); }
-    .contact-form { padding: 22px; border: 2px solid var(--ink); background: var(--paper); }
-    .contact-form .button { width: 100%; }
-    .contact-form [role="status"] { min-height: 24px; margin: 12px 0; font-size: 14px; }
-
-    .site-footer { padding: 58px 28px 26px; background: var(--oxblood); color: var(--ice); }
-    .footer-grid { display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); gap: 36px; }
-    .footer-brand { max-width: 250px; }
-    .footer-brand .wordmark-text { color: var(--gold); font-size: 30px; }
-    .footer-brand p { margin: 18px 0; color: var(--ice); font: 16px/1.45 var(--serif); }
-    .footer-col h2 { margin-bottom: 14px; color: var(--coral); font-size: 14px; text-transform: uppercase; }
-    .footer-col ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
-    .footer-col a, .footer-bottom a { width: fit-content; color: var(--ice); font-size: 15px; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    .footer-col a:hover, .footer-bottom a:hover { color: var(--gold); }
-    .manage-cookies { border: 0; padding: 0; background: none; color: var(--ice); font: inherit; text-align: left; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
-    .footer-rule { height: 1px; margin: 38px 0 20px; border: 0; background: rgba(220,222,255,.4); }
-    .footer-bottom { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; color: var(--ice); font-size: 13px; }
-    .footer-bottom p { max-width: 780px; margin: 0; }
-    .footer-bottom a { font-size: inherit; }
-    .anpc-links { display: flex; align-items: center; gap: 12px; }
-    .anpc-links img { width: 96px; max-height: 48px; object-fit: contain; background: var(--ice); }
-
-    .cookie-banner {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 90;
-      width: min(520px, calc(100vw - 32px));
-      padding: 20px;
-      border: 2px solid var(--oxblood);
-      background: var(--coral);
-      color: var(--oxblood);
-      box-shadow: 8px 8px 0 var(--ink);
-      animation: rise-in .4s both ease-out;
-    }
-    .cookie-banner[hidden] { display: none; }
-    .cookie-banner h2 { margin-bottom: 8px; font: 22px/1.1 var(--display); }
-    .cookie-banner p { margin-bottom: 14px; font: 15px/1.4 var(--serif); }
-    .cookie-banner p a { font-weight: 700; }
-    .cookie-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
-    .cookie-actions button { min-height: 40px; padding: 8px 12px; border: 1px solid var(--oxblood); background: transparent; color: var(--oxblood); font-size: 13px; font-weight: 700; cursor: pointer; }
-    .cookie-actions button:last-child { background: var(--ink); color: var(--ice); }
-    .cookie-actions button:hover { background: var(--gold); color: var(--ink); }
-
-    dialog.lightbox {
-      width: min(1000px, calc(100vw - 32px));
-      max-width: none;
-      max-height: calc(100dvh - 36px);
-      padding: 14px;
-      border: 2px solid var(--gold);
-      background: var(--ink);
-      color: var(--ice);
-      box-shadow: 12px 12px 0 var(--oxblood);
-    }
-    dialog.lightbox::backdrop { background: rgba(85,0,0,.88); backdrop-filter: blur(5px); }
-    .lightbox figure { display: grid; gap: 10px; margin: 0; }
-    .lightbox-image { display: grid; min-height: 240px; max-height: calc(100dvh - 150px); place-items: center; }
-    .lightbox-image img { max-width: 100%; max-height: calc(100dvh - 170px); object-fit: contain; }
-    .lightbox-caption { display: flex; align-items: center; justify-content: space-between; gap: 14px; font-size: 14px; }
-    .lightbox-controls { display: flex; gap: 8px; }
-    .lightbox-controls button, .lightbox-close { min-width: 42px; min-height: 42px; border: 1px solid var(--ice); background: transparent; color: var(--ice); cursor: pointer; }
-    .lightbox-controls button:hover, .lightbox-close:hover { background: var(--gold); color: var(--ink); }
-    .lightbox-close { position: absolute; top: 16px; right: 16px; z-index: 2; font-size: 23px; }
-
-    [data-reveal] { opacity: 1; transform: none; }
-    .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
-    .js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
-    .js [data-reveal="left"] { transform: translateX(-28px); }
-    .js [data-reveal="left"].is-visible { transform: translateX(0); }
-    .js [data-reveal="right"] { transform: translateX(28px); }
-    .js [data-reveal="right"].is-visible { transform: translateX(0); }
-
-    @keyframes sticker-pop { from { opacity: 0; transform: scale(.45) rotate(-22deg); } to { opacity: 1; transform: scale(1) rotate(9deg); } }
-    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
-    @keyframes ticker { to { transform: translateX(-50%); } }
-    @keyframes rise-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes intro-progress { to { transform: scaleX(1); } }
-    @keyframes intro-number { 0%,100% { opacity: 0; transform: scale(.72); } 18%,72% { opacity: 1; transform: scale(1); } }
-    @keyframes intro-flash { 0%,12%,30%,52%,100% { opacity: 0; } 13%,14%,53%,54% { opacity: .35; } }
-    @keyframes clapper-open { 0%,100% { transform: rotate(0); } 16%,50% { transform: rotate(-18deg); } }
-    @keyframes stage-star { 0%,100% { opacity: .3; transform: translateY(0) rotate(0) scale(.75); } 50% { opacity: 1; transform: translateY(-20px) rotate(75deg) scale(1.1); } }
-    @keyframes intro-end-card { 0%,35% { opacity: 0; transform: translateY(22px) scale(.92); filter: blur(8px); } 68%,100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
-    @keyframes intro-crew { 0% { opacity: 0; transform: translateY(28px); } 16%,72% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(18px); } }
-    @keyframes peep-enter { 0% { opacity: 0; transform: translateY(90px) scale(.72) rotate(-9deg); } 70% { opacity: 1; transform: translateY(-15px) scale(1.06) rotate(3deg); } 100% { opacity: 1; transform: translateY(0) scale(1) rotate(var(--settle, 0deg)); } }
-    @keyframes peep-hop { 0%,100% { transform: translateY(0) scale(1,1); } 35% { transform: translateY(-25px) scale(1.02,.98); } 68% { transform: translateY(-3px) scale(.98,1.04); } }
-    @keyframes peep-caption { 0%,35% { opacity: 0; transform: translate(-50%,10px) rotate(-7deg) scale(.7); } 65%,100% { opacity: 1; transform: translate(-50%,0) rotate(-7deg) scale(1); } }
-
-    html.intro-pending body { overflow: hidden; }
-    html.intro-pending body > :not(.intro-film) { visibility: hidden; }
-    .intro-film { position: fixed; inset: 0; z-index: 150; display: none; place-items: center; padding: 28px; overflow: hidden; background: var(--oxblood); color: var(--paper); opacity: 1; }
-    .intro-pending .intro-film { display: grid; }
-    .intro-film.is-done { opacity: 0; pointer-events: none; transition: opacity .55s ease; }
-    .intro-stage { position: relative; width: min(100%, 980px); height: min(620px, calc(100svh - 100px)); min-height: 300px; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(220,222,255,.45); background: radial-gradient(ellipse at 50% 85%, rgba(194,122,122,.22), transparent 55%), linear-gradient(135deg, rgba(255,143,122,.1), transparent 38%), var(--oxblood); }
-    .intro-stage::before { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: rgba(220,222,255,.7); content: ""; opacity: 0; animation: intro-flash 6s linear both; }
-    .intro-skip { position: absolute; top: 22px; right: 24px; z-index: 4; min-height: 44px; padding: 10px 14px; border: 1px solid var(--coral); background: transparent; color: var(--paper); font-size: 14px; font-weight: 700; text-transform: uppercase; cursor: pointer; }
-    .intro-skip:hover { background: var(--coral); color: var(--oxblood); }
-    .intro-topline { position: absolute; top: 22px; left: 24px; z-index: 3; color: var(--coral); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-    .intro-set-mark { position: absolute; z-index: 1; color: var(--coral); font: 46px/1 var(--display); opacity: .6; animation: stage-star 1.8s ease-in-out infinite; }
-    .intro-set-mark--one { top: 24%; left: 12%; }
-    .intro-set-mark--two { top: 32%; right: 13%; font-size: 32px; animation-delay: .4s; }
-    .intro-set-mark--three { right: 23%; bottom: 24%; font-size: 24px; animation-delay: .8s; }
-    .intro-clapper { position: absolute; top: 21%; left: 50%; z-index: 2; width: 194px; height: 72px; border: 2px solid var(--ice); background: var(--coral); color: var(--oxblood); text-align: center; transform: translateX(-50%) rotate(-5deg); animation: peep-enter .65s .15s both cubic-bezier(.2,.9,.3,1.25); }
-    .intro-clapper::before { position: absolute; top: -16px; left: -2px; width: calc(100% + 4px); height: 15px; border: 2px solid var(--ice); background: repeating-linear-gradient(135deg, var(--ice) 0 12px, var(--oxblood) 12px 24px); content: ""; transform-origin: left bottom; animation: clapper-open .8s .65s 2 ease-in-out; }
-    .intro-clapper strong, .intro-clapper span { display: block; font-weight: 700; line-height: 1.1; }
-    .intro-clapper strong { padding-top: 16px; font: 20px/1 var(--display); }
-    .intro-clapper span { padding-top: 5px; font-size: 11px; text-transform: uppercase; }
-    .intro-countdown { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; }
-    .intro-number { position: absolute; color: var(--paper); font: 170px/.85 var(--display); opacity: 0; }
-    .intro-number:nth-child(1) { animation: intro-number 1.1s .05s both; }
-    .intro-number:nth-child(2) { animation: intro-number 1.1s 1.12s both; }
-    .intro-number:nth-child(3) { animation: intro-number 1.1s 2.19s both; }
-    .intro-crew { position: absolute; inset: auto 0 10px; z-index: 3; height: 280px; display: flex; align-items: flex-end; justify-content: space-evenly; gap: 12px; padding: 0 4%; opacity: 0; }
-    .intro-crew.is-active { animation: intro-crew 4.1s both ease-in-out; }
-    .peep-actor { position: relative; flex: 0 1 190px; width: 190px; height: 252px; opacity: 0; }
-    .intro-crew.is-active .peep-actor { animation: peep-enter .72s var(--arrival-delay, .25s) both cubic-bezier(.2,.9,.3,1.25); }
-    .peep-bounce { width: 100%; height: 100%; display: grid; place-items: end center; transform-origin: bottom center; }
-    .intro-crew.is-active .peep-bounce { animation: peep-hop .62s calc(var(--arrival-delay, .25s) + .72s) 4 ease-in-out; }
-    .css-peeps { width: 100%; height: 100%; display: block; --peep-head: bangs1; --peep-face: talking; --peep-body: explaining; --peep-hair-color: var(--oxblood); --peep-skin-color: var(--ice); --peep-accessory-color: var(--coral); --peep-facial-hair-color: var(--oxblood); --peep-object-color: var(--rose); --peep-clothes-color: var(--coral); }
-    .peep-actor--one { --arrival-delay: .18s; --settle: -5deg; }
-    .peep-actor--one .css-peeps { --peep-head: mohawk1; --peep-hair-color: var(--oxblood); --peep-clothes-color: var(--coral); }
-    .peep-actor--two { --arrival-delay: .42s; --settle: 2deg; }
-    .peep-actor--two .css-peeps { --peep-head: hijab; --peep-hair-color: var(--rose); --peep-clothes-color: var(--oxblood); --peep-object-color: var(--coral); }
-    .peep-actor--three { --arrival-delay: .64s; --settle: 5deg; }
-    .peep-actor--three .css-peeps { --peep-head: afro; --peep-hair-color: var(--oxblood); --peep-clothes-color: var(--rose); --peep-accessory-color: var(--ice); }
-    .peep-caption { position: absolute; top: 10px; left: 50%; z-index: 2; padding: 5px 9px; background: var(--coral); color: var(--oxblood); font-size: 13px; font-weight: 700; white-space: nowrap; opacity: 0; }
-    .intro-crew.is-active .peep-caption { animation: peep-caption .6s calc(var(--arrival-delay, .25s) + .45s) both ease-out; }
-    .peep-actor--two .peep-caption { background: var(--ice); }
-    .peep-actor--three .peep-caption { background: var(--rose); }
-    .intro-end-card { position: relative; z-index: 4; display: grid; justify-items: center; gap: 12px; text-align: center; opacity: 0; animation: intro-end-card .95s 4.75s both cubic-bezier(.2,.7,.2,1); }
-    .intro-logo { width: min(300px, 68vw); height: auto; }
-    .intro-end-card p { margin: 0; color: var(--paper); font-size: 18px; text-transform: uppercase; }
-    .intro-year { color: var(--coral); font: 48px/.9 var(--display); }
-    .intro-progress { position: absolute; right: 0; bottom: 0; left: 0; z-index: 5; height: 5px; background: var(--coral); transform: scaleX(0); transform-origin: left; animation: intro-progress 6s linear both; }
-
-    @media (max-width: 1050px) {
-      .nav-wrap { width: min(100% - 36px, 900px); }
-      .nav-ticket { display: none; }
-      .hero { padding-inline: 6vw; grid-template-columns: 1fr .85fr; }
-      .hero h1 { font-size: 72px; }
-      .hero-art { width: min(100%, 430px); }
-      .gallery-grid { grid-auto-rows: 90px; }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 760px) {
-      :root { --nav-height: 66px; }
-      body { font-size: 17px; }
-      .topline { min-height: 32px; font-size: 12px; }
-      .nav-wrap { min-height: var(--nav-height); width: calc(100% - 32px); }
-      .wordmark img { width: 96px; height: 44px; }
-      .wordmark-text { font-size: 21px; }
-      .menu-toggle {
-        display: inline-grid;
-        width: 44px;
-        height: 44px;
-        place-items: center;
-        border: 1px solid var(--coral);
-        background: transparent;
-        color: var(--ice);
-        font-size: 22px;
-        cursor: pointer;
-      }
-      .nav-links {
-        position: fixed;
-        inset: calc(var(--nav-height) + 32px) 0 0;
-        display: flex;
-        align-items: stretch;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 0;
-        padding: 18px 24px 36px;
-        background: var(--ink);
-        transform: translateX(100%);
-        transition: transform .3s ease;
-      }
-      .nav-links.is-open { transform: translateX(0); }
-      .nav-links li { border-bottom: 1px solid rgba(220,222,255,.25); }
-      .nav-links a { display: block; padding: 15px 0; color: var(--ice); font-size: 20px; }
-      .hero {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        gap: 36px;
-        padding: 36px 26px 46px;
-      }
-      .hero::before { top: 42%; left: 16%; width: 120vw; height: 120vw; }
-      .hero-copy { padding: 10px 0 0; }
-      .hero h1 { font-size: 56px; }
-      .hero-line { font-size: 24px; }
-      .hero-art { width: min(70%, 300px); justify-self: center; aspect-ratio: 1.3; margin: 0 18px 18px 0; }
-      .hero-sticker { right: -30px; bottom: 18px; width: 104px; height: 104px; font-size: 12px; }
-      .hero-sticker strong { font-size: 21px; }
-      .hero-scroll { bottom: 16px; }
-      .ticker { padding: 12px 0; }
-      .ticker-item { font-size: 17px; }
-      .section { padding: 76px 22px; }
-      .section-head, .gallery-topline { align-items: flex-start; flex-direction: column; }
-      .section-title { font-size: 42px; }
-      .section-intro { font-size: 17px; }
-      .choice-grid { grid-template-columns: 1fr; }
-      .choice { min-height: 150px; }
-      .choice-title { font-size: 30px; }
-      .route-result { align-items: flex-start; flex-direction: column; }
-      .about-grid, .story-grid { grid-template-columns: 1fr; gap: 42px; }
-      .about-grid .photo-frame { width: min(100%, 540px); }
-      .copy-block h2 { font-size: 42px; }
-      .copy-block p, .story-copy p { font-size: 17px; }
-      .story-photo { width: calc(100% - 16px); margin-left: 6px; }
-      .edition-stamp { left: -12px; width: 78px; height: 78px; font-size: 16px; }
-      .ticket-heading { grid-template-columns: 1fr; }
-      .ticket-heading .button { width: fit-content; }
-      .judge-item summary { grid-template-columns: 30px 48px 1fr auto; gap: 10px; }
-      .judge-photo { width: 48px; height: 48px; }
-      .judge-name { font-size: 23px; }
-      .judge-bio { padding: 0 8px 22px 48px; font-size: 16px; }
-      .newsletter-inner { grid-template-columns: 1fr; gap: 28px; }
-      .field-row { grid-template-columns: 1fr; gap: 0; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
-      .gallery-tile:nth-child(n) { grid-column: span 1; grid-row: span 1; }
-      .gallery-tile:nth-child(1), .gallery-tile:nth-child(6) { grid-row: span 2; }
-      .gallery-tile:nth-child(4), .gallery-tile:nth-child(7) { grid-column: span 2; }
-      .contact-band { padding: 58px 22px; }
-      .contact-inner { grid-template-columns: 1fr; align-items: start; gap: 26px; }
-      .contact-inner h2 { font-size: 38px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px 18px; }
-      .footer-brand { grid-column: 1 / -1; }
-      .footer-bottom { flex-direction: column; }
-      .cookie-banner { right: 12px; bottom: 12px; width: calc(100vw - 24px); padding: 16px; }
-      .cookie-actions { justify-content: stretch; }
-      .cookie-actions button { flex: 1; }
-      .lightbox-caption { align-items: flex-start; flex-direction: column; }
-      .intro-film { padding: 12px; }
-      .intro-stage { width: 100%; height: min(620px, calc(100svh - 24px)); min-height: 300px; }
-      .intro-topline { top: 18px; left: 16px; max-width: calc(100% - 110px); font-size: 11px; }
-      .intro-skip { top: 12px; right: 12px; min-height: 40px; padding: 8px 10px; font-size: 12px; }
-      .intro-clapper { top: 17%; width: 154px; height: 62px; }
-      .intro-clapper strong { font-size: 16px; }
-      .intro-clapper span { font-size: 10px; }
-      .intro-set-mark--one { left: 5%; }
-      .intro-set-mark--two { right: 5%; }
-      .intro-crew { inset: auto 0 8px; height: 205px; gap: 0; padding: 0 1%; }
-      .peep-actor { flex-basis: 130px; width: 130px; height: 178px; }
-      .peep-caption { top: 3px; padding: 4px 6px; font-size: 10px; }
-      .intro-number { font-size: 130px; }
-      .intro-end-card { gap: 8px; }
-      .intro-logo { width: min(230px, 60vw); }
-      .intro-end-card p { max-width: 260px; font-size: 14px; }
-      .intro-year { font-size: 40px; }
-    }
-    @media (max-width: 390px) {
-      .hero h1 { font-size: 47px; }
-      .hero-actions .button { width: 100%; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-brand { grid-column: auto; }
-    }
-    @media (max-height: 760px) and (max-width: 760px) {
-      .hero { gap: 24px; padding-top: 24px; padding-bottom: 42px; }
-      .hero-art { width: min(64%, 260px); }
-    }
-    @media (max-height: 800px) and (min-width: 761px) {
-      .hero { padding-top: 32px; padding-bottom: 48px; }
-      .hero-art { width: min(100%, 450px); aspect-ratio: 1.12; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-      .js [data-reveal] { opacity: 1; transform: none; }
-      .intro-film { display: none !important; }
-    }
-  </style>
+  
+  
+  
 </head>
 <body>
-  <div class="intro-film" id="intro-film" aria-label="Zoom In Film Festival 2027 opening sequence">
-    <button class="intro-skip" id="intro-skip" type="button">Skip intro <span aria-hidden="true">↗</span></button>
-    <div class="intro-stage">
-      <span class="intro-topline">Zoom In Film Festival · Bucharest</span>
-      <span class="intro-set-mark intro-set-mark--one" aria-hidden="true">✳</span>
-      <span class="intro-set-mark intro-set-mark--two" aria-hidden="true">✳</span>
-      <span class="intro-set-mark intro-set-mark--three" aria-hidden="true">✳</span>
-      <div class="intro-clapper" aria-hidden="true"><strong>ZOOM IN!</strong><span>Take 2027 · Roll camera</span></div>
-      <div class="intro-countdown" aria-hidden="true"><span class="intro-number">3</span><span class="intro-number">2</span><span class="intro-number">1</span></div>
-      <div class="intro-crew" aria-hidden="true">
-        <div class="peep-actor peep-actor--one">
-          <span class="peep-caption">Director!</span>
-          <div class="peep-bounce"><div class="css-peeps" data-css-peeps="mohawk1 talking explaining"></div></div>
-        </div>
-        <div class="peep-actor peep-actor--two">
-          <span class="peep-caption">And... action!</span>
-          <div class="peep-bounce"><div class="css-peeps" data-css-peeps="hijab talking explaining"></div></div>
-        </div>
-        <div class="peep-actor peep-actor--three">
-          <span class="peep-caption">That's a wrap!</span>
-          <div class="peep-bounce"><div class="css-peeps" data-css-peeps="afro talking explaining"></div></div>
-        </div>
-      </div>
-      <div class="intro-end-card">
-        <img class="intro-logo" src="../assets/images/transparent-235x105.png" alt="">
-        <p>Dream It. Film it. Create it. Zoom IN!</p>
-        <span class="intro-year">FEBRUARY 2027</span>
+
+<!-- Analytics -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6H26HJNXGW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6H26HJNXGW');
+</script>
+<!-- /Analytics -->
+
+
+  
+  <section data-bs-version="5.1" class="menu menu1 cid-vdpfOF5dww" once="menu" id="menu01-31">
+	
+
+	<nav class="navbar navbar-dropdown navbar-fixed-top fixed-top navbar-expand-lg hide-on-scroll">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-logo">
+					<a href="https://zoomin-filmfest.com">
+						<img src="assets/images/transparent-235x105.png" alt="ZIFF LOGO" style="height: 3.3rem;">
+					</a>
+				</span>
+				
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item dropdown">
+						<a class="nav-link link text-secondary text-primary dropdown-toggle display-4" href="about.html" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">About</a><div class="dropdown-menu" aria-labelledby="dropdown-616"><a class="text-secondary text-primary dropdown-item display-4" href="about.html">ZIFF</a><a class="text-secondary text-primary show dropdown-item display-4" href="team.html">our team</a><a class="text-secondary text-primary show dropdown-item display-4" href="collabs.html">COLLABORATIONS</a><a class="text-secondary text-primary show dropdown-item display-4" href="partners.html">our partners</a></div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-secondary text-primary display-4" href="gallery.html" aria-expanded="false">GALLERY</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link link text-secondary text-primary dropdown-toggle display-4" href="register.html" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">REGISTER</a><div class="dropdown-menu" aria-labelledby="dropdown-104"><a class="text-secondary text-primary dropdown-item display-4" href="register.html">REGISTER YOUR TEAM</a><a class="text-secondary text-primary show dropdown-item display-4" href="join.html#article21-1x">BECOME A VOLUNTEER</a><a class="text-secondary text-primary show dropdown-item display-4" href="donate.html">donate!</a></div>
+					</li><li class="nav-item dropdown"><a class="nav-link link text-secondary text-primary dropdown-toggle display-4" href="contact.html" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">HELP</a><div class="dropdown-menu" aria-labelledby="dropdown-374"><a class="text-secondary text-primary dropdown-item display-4" href="help.html">FAQ</a><a class="text-secondary text-primary show dropdown-item display-4" href="report.html">REPORT</a><a class="text-secondary text-primary show dropdown-item display-4" href="rules.html">RULES</a><a class="text-secondary text-primary show dropdown-item display-4" href="tos.html">TOS</a><a class="text-secondary text-primary show dropdown-item display-4" href="privacy.html">PRIVACY</a></div></li><li class="nav-item"><a class="nav-link link text-secondary text-primary display-4" href="https://zoomin-filmfest.com/blog">BLOG</a></li><li class="nav-item"><a class="nav-link link text-secondary text-primary display-4" href="contact.html">CONTACT</a></li></ul>
+				<div class="icons-menu">
+					<a class="iconfont-wrapper" href="https://www.instagram.com/zoomin_filmfest/" target="_blank">
+						<span class="p-2 mbr-iconfont fab fa-instagram"></span>
+					</a>
+					<a class="iconfont-wrapper" href="https://www.tiktok.com/@zoomin_filmfest" target="_blank">
+						<span class="p-2 mbr-iconfont fab fa-tiktok"></span>
+					</a>
+					<a class="iconfont-wrapper" href="mailto:contact@zoomin-filmfest.com?subject=ZIFF%20Website%20Inquiry">
+						<span class="p-2 mbr-iconfont material material-mail-outline"></span>
+					</a>
+					
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	<script>
+		(function() {
+			// Prevent multiple listeners if block is duplicated or re-rendered
+			if (window.mbrHideOnScrollInitialized) return;
+			window.mbrHideOnScrollInitialized = true;
+
+			var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+			window.addEventListener('scroll', function() {
+				var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+				
+				// Find all navbars that currently have the class (handles dynamic updates)
+				var navbars = document.querySelectorAll('.navbar.hide-on-scroll');
+				
+				// Top of page: reset all
+				if (scrollTop <= 0) {
+					navbars.forEach(function(navbar) {
+						navbar.classList.remove('scroll-down');
+						navbar.classList.add('scroll-up');
+					});
+					lastScrollTop = scrollTop;
+					return;
+				}
+
+				// Sensitivity threshold
+				if (Math.abs(scrollTop - lastScrollTop) < 5) return;
+
+				navbars.forEach(function(navbar) {
+					if (scrollTop > lastScrollTop && scrollTop > 90) {
+						// Scrolling Down
+						navbar.classList.remove('scroll-up');
+						navbar.classList.add('scroll-down');
+					} else if (scrollTop < lastScrollTop) {
+						// Scrolling Up
+						navbar.classList.remove('scroll-down');
+						navbar.classList.add('scroll-up');
+					}
+				});
+
+				lastScrollTop = scrollTop;
+			});
+		})();
+	</script>
+</section>
+
+<section data-bs-version="5.1" class="header18 cid-vcidby4mY5 mbr-fullscreen mbr-parallax-background" id="header18-2">
+  
+
+  <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-12">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-7">Next up: February 2027</h1>
+        <h2 class="mbr-section-subtitle mbr-fonts-style mbr-white mb-4 display-1"><strong>ZOOM IN FILM FESTIVAL</strong></h2>
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-5" style="text-align:left;">Dream It. Film it. Create it. Zoom IN!<br></p>
+        <div class="mbr-section-btn"><a class="btn btn-secondary-outline display-7" href="gallery.html" target="_blank">View the 2026 gallery!</a></div>
       </div>
     </div>
-    <div class="intro-progress" aria-hidden="true"></div>
   </div>
-  <div class="progress-track" aria-hidden="true"><div class="progress-value" id="progress-value"></div></div>
-  <div class="topline">Next up: February 2027 <span>Dream It. Film it. Create it. Zoom IN!</span></div>
+</section>
 
-  <header class="site-header" id="site-header">
-    <nav class="nav-wrap" aria-label="Main navigation">
-      <a class="wordmark" href="#top" aria-label="Zoom In Film Festival home">
-        <img src="../assets/images/transparent-235x105.png" alt="Zoom In Film Festival">
-      </a>
-      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">☰</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../gallery.html">Gallery</a></li>
-        <li><a href="../register.html">Register</a></li>
-        <li><a href="../help.html">Help</a></li>
-        <li><a href="https://zoomin-filmfest.com/blog">Blog</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-      <a class="nav-ticket" href="#register">Register your movie <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
+<section data-bs-version="5.1" class="start article4 cid-vciebMf6c6 mbr-fullscreen" id="article04-3">
+	
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy" data-reveal="left">
-        <p class="eyebrow">A student-led film festival · Bucharest</p>
-        <h1 id="hero-title"><span>Zoom In</span><span>Film</span><span>Festival</span></h1>
-        <p class="hero-line">Dream It. Film it. Create it. Zoom IN!</p>
-        <div class="hero-actions">
-          <a class="button button--coral" href="#register">Register your movie <span aria-hidden="true">↗</span></a>
-          <a class="button button--outline" href="../gallery.html">View the 2026 gallery! <span aria-hidden="true">↓</span></a>
-        </div>
-      </div>
-      <figure class="hero-art" data-reveal="right">
-        <img src="../assets/images/img-603-1256x837.webp" alt="Two young festival presenters share the microphone on stage">
-        <figcaption class="hero-sticker">Next up<strong>Feb<br>2027</strong></figcaption>
-      </figure>
-      <a class="hero-scroll" href="#choose-your-frame"><span aria-hidden="true">↓</span> Find your way in</a>
-    </section>
+	
+	
 
-    <div class="ticker" aria-label="Dream it, film it, create it">
-      <div class="ticker-track" aria-hidden="true">
-        <span class="ticker-item">Dream it <b>✳</b> Film it <b>✳</b> Create it <b>✳</b> Zoom IN! <b>✳</b></span>
-        <span class="ticker-item">Dream it <b>✳</b> Film it <b>✳</b> Create it <b>✳</b> Zoom IN! <b>✳</b></span>
-        <span class="ticker-item">Dream it <b>✳</b> Film it <b>✳</b> Create it <b>✳</b> Zoom IN! <b>✳</b></span>
-        <span class="ticker-item">Dream it <b>✳</b> Film it <b>✳</b> Create it <b>✳</b> Zoom IN! <b>✳</b></span>
-      </div>
-    </div>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-12 col-lg-5 image-wrapper">
+				<img class="w-100" src="assets/images/img-415-1036x690.webp" alt="">
+			</div>
+			<div class="col-12 col-md-12 col-lg">
+				<div class="text-wrapper align-left">
+					<h1 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>What is Zoom In?</strong></h1>
+					<p class="mbr-text mbr-fonts-style mb-4 display-7">The Zoom In Film Festival (ZIFF) is a student-led film festival that brings together creativity, community and a passion for protecting cultural heritage. More than just an opportunity to showcase short films made by young people, ZIFF helps raise awareness and funds for the “Adoptă o Casă” programme in Roșia Montană, supporting efforts to preserve the area’s historic buildings and local heritage.<br>By bringing young filmmakers and audiences together in Bucharest, the festival hopes to create a stronger connection between the city and the community of Roșia Montană — one that goes beyond the protests of 2013. Roșia Montană is a beautiful and diverse place, with a unique history that is worth protecting and sharing. There is still much work to be done to restore its historic buildings and help keep its heritage alive, and ZIFF is proud to support that effort through “Adoptă o Casă”.</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-    <section class="section choose" id="choose-your-frame" aria-labelledby="choose-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <div>
-            <p class="section-kicker">Choose your own opening scene</p>
-            <h2 class="section-title" id="choose-title">What brings <em>you</em> here?</h2>
-          </div>
-          <p class="section-intro">Pick a frame. We’ll point you toward a good next step. The whole festival is still yours to explore.</p>
-        </div>
-        <div class="choice-grid" role="group" aria-label="Choose what you are interested in">
-          <button class="choice" type="button" data-path="film" aria-pressed="true">
-            <span class="choice-number">01 / MAKE</span><span class="choice-title">I have a film in me</span><span class="choice-arrow" aria-hidden="true">↗</span>
-          </button>
-          <button class="choice" type="button" data-path="watch" aria-pressed="false">
-            <span class="choice-number">02 / WATCH</span><span class="choice-title">Show me the stories</span><span class="choice-arrow" aria-hidden="true">↗</span>
-          </button>
-          <button class="choice" type="button" data-path="heritage" aria-pressed="false">
-            <span class="choice-number">03 / CARE</span><span class="choice-title">I care about heritage</span><span class="choice-arrow" aria-hidden="true">↗</span>
-          </button>
-        </div>
-        <div class="route-result" aria-live="polite" aria-atomic="true">
-          <p id="route-copy"><strong>Your next scene:</strong> find out how to submit your movie.</p>
-          <a class="button" id="route-link" href="../submit.html">Explore submissions <span aria-hidden="true">→</span></a>
-        </div>
-        <button class="route-shuffle" id="route-shuffle" type="button">Surprise me with a route ↻</button>
-      </div>
-    </section>
+<section data-bs-version="5.1" class="start article2 cid-vcj4RJ1uXV" id="article02-12">
+	
 
-    <section class="section" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <figure class="photo-frame" data-reveal="left">
-          <img src="../assets/images/img-415-1036x690.webp" alt="Festival audience watches a countdown on screen">
-          <figcaption class="photo-caption"><span>ZIFF · First edition</span><span>01 / 03</span></figcaption>
-        </figure>
-        <div class="copy-block" data-reveal="right">
-          <p class="section-kicker">A little more than a film festival</p>
-          <h2 id="about-title">What is Zoom In?</h2>
-          <p>The Zoom In Film Festival (ZIFF) is a student-led film festival that brings together creativity, community and a passion for protecting cultural heritage. More than just an opportunity to showcase short films made by young people, ZIFF helps raise awareness and funds for the “Adoptă o Casă” programme in Roșia Montană, supporting efforts to preserve the area’s historic buildings and local heritage.</p>
-          <p>By bringing young filmmakers and audiences together in Bucharest, the festival hopes to create a stronger connection between the city and the community of Roșia Montană — one that goes beyond the protests of 2013. Roșia Montană is a beautiful and diverse place, with a unique history that is worth protecting and sharing. There is still much work to be done to restore its historic buildings and help keep its heritage alive, and ZIFF is proud to support that effort through “Adoptă o Casă”.</p>
-          <a class="button button--outline" href="../about.html">Learn more about ZIFF <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
+	
+	
 
-    <section class="section story" aria-labelledby="story-title">
-      <div class="container story-grid">
-        <div class="story-copy" data-reveal="left">
-          <p class="section-kicker">Every festival starts somewhere</p>
-          <h2 class="section-title" id="story-title">How it all <em>started</em></h2>
-          <p>Some lessons cannot be taught. They have to be lived, built and felt — in the nerves before a premiere, the excitement of seeing a project come together, and the applause at the end.</p>
-          <p>Some of our most meaningful learning experiences have happened alongside young people, through projects that pushed us out of our comfort zones and brought us closer together. That is how the first Zoom In Short Film Festival came about — from courage, determination and a desire to do something that could make a difference.</p>
-          <a class="button button--coral" href="../about.html">Meet the story <span aria-hidden="true">↗</span></a>
-        </div>
-        <figure class="story-photo" data-reveal="right">
-          <span class="edition-stamp" aria-hidden="true">First<br>edition</span>
-          <img src="../assets/images/img-603-1256x837.webp" alt="Festival presenters on stage during the first edition">
-        </figure>
-      </div>
-    </section>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-12 col-lg-6 image-wrapper">
+				<img class="w-100" src="assets/images/img-603-1256x837.webp" alt="">
+			</div>
+			<div class="col-12 col-md-12 col-lg">
+				<div class="text-wrapper align-left">
+					<h1 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>How It All Started</strong></h1>
+					<p class="mbr-text align-left mbr-fonts-style mb-4 display-7">Some lessons cannot be taught. They have to be lived, built and felt — in the nerves before a premiere, the excitement of seeing a project come together, and the applause at the end.<br><br>Some of our most meaningful learning experiences have happened alongside young people, through projects that pushed us out of our comfort zones and brought us closer together. That is how the first Zoom In Short Film Festival came about — from courage, determination and a desire to do something that could make a difference.<br></p>
+					<div class="mbr-section-btn align-left mt-3"><a class="btn btn-success-outline display-7" href="about.html">Learn More!</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-    <section class="section ticket-section" id="register" aria-labelledby="ticket-title">
-      <div class="container">
-        <div class="ticket-heading" data-reveal>
-          <div><p class="section-kicker">The next scene is yours</p><h2 class="section-title" id="ticket-title">Register <em>your movie!</em></h2></div>
-          <a class="button button--outline" href="../register.html">Registration details <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="ticket-shell" data-reveal>
-          <link rel="stylesheet" href="https://tickets.zoomin-filmfest.com/widget/v2.css" crossorigin="anonymous">
-          <script src="https://tickets.zoomin-filmfest.com/widget/v2.en.js" async crossorigin="anonymous"></script>
-          <pretix-widget event="https://tickets.zoomin-filmfest.com/"></pretix-widget>
-          <p class="ticket-fallback">Shop not appearing? <a href="https://tickets.zoomin-filmfest.com/" target="_blank" rel="noopener noreferrer">Open the ZIFF ticket shop</a>.</p>
-          <noscript><p class="no-script-note">JavaScript is disabled. <a href="https://tickets.zoomin-filmfest.com/" target="_blank" rel="noopener noreferrer">Open the ticket shop</a> in a new tab.</p></noscript>
-        </div>
-      </div>
-    </section>
+<section data-bs-version="5.1" class="header14 cid-vuJk7vb0ia" id="header14-50">
+	
 
-    <section class="section judges" aria-labelledby="judges-title">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <div><p class="section-kicker">from ZIFF's 1st edition</p><h2 class="section-title" id="judges-title">Meet the <em>judges!</em></h2></div>
-          <p class="section-intro">Open a name to read about the people who brought their experience and perspective to our first-edition jury.</p>
-        </div>
-        <div class="judge-list" data-reveal>
-          <details class="judge-item" open>
-            <summary><span class="judge-num">01</span><img class="judge-photo" src="../assets/images/corinauteu.webp" alt="Corina" width="64" height="64" loading="lazy"><span class="judge-name">Corina Șuteu</span><span class="judge-toggle" aria-hidden="true">+</span></summary>
-            <div class="judge-bio"><p>Corina Șuteu is an international cultural consultant and cultural policy expert with an international career spanning over 30 years in the arts and culture field. She was Minister of Culture in Romania and Director of the Romanian Cultural Institute in New York. Among many other major projects in various sectors of the arts, she founded two film festivals that she produces and whose president she is: Making Waves: New Romanian Cinema and fARAD, an international documentary film festival in Arad. Author of books on cultural management, author of articles in the magazine 22, Dilema, Observator Cultural and international magazines specialized in cultural policies, Corina Șuteu curates the space and programs of Insula 42 and works as an expert for various organizations in Romania and abroad.</p></div>
-          </details>
-          <details class="judge-item">
-            <summary><span class="judge-num">02</span><img class="judge-photo" src="../assets/images/mihaimanescu.webp" alt="Mihai" width="64" height="64" loading="lazy"><span class="judge-name">Mihai Mănescu</span><span class="judge-toggle" aria-hidden="true">+</span></summary>
-            <div class="judge-bio"><p>Mihai Manescu is a screenwriter, author and communication specialist, PhD in Film and Media, founder of Sustin.org. He brings over a decade of teaching and storytelling expertise to our jury, blending hero’s journey insight with film industry and NGO experience.</p></div>
-          </details>
-          <details class="judge-item">
-            <summary><span class="judge-num">03</span><img class="judge-photo" src="../assets/images/paulatudorcmrzan.webp" alt="Paula" width="64" height="64" loading="lazy"><span class="judge-name">Paula Tudor Cămîrzan</span><span class="judge-toggle" aria-hidden="true">+</span></summary>
-            <div class="judge-bio"><p>Paula Tudor Cămîrzan is a cultural manager and documentary film producer, vice president of the Antistatic Association and coordinator of the Via Danubiana project. She has international experience in documentary production and development, with studies in documentary film and visual anthropology.</p></div>
-          </details>
-        </div>
-      </div>
-    </section>
+	
+	
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="card col-12 col-md-12 col-lg-8">
+				<div class="card-wrapper">
+					<div class="card-box align-center">
+						<h1 class="card-title mbr-fonts-style mb-4 display-1">
+							<strong>Register YOUR MOVIE!</strong></h1>
+              <link rel="stylesheet" type="text/css" href="https://tickets.zoomin-filmfest.com/widget/v2.css" crossorigin="">
+              <script type="text/javascript" src="https://tickets.zoomin-filmfest.com/widget/v2.en.js" async crossorigin></script>
+              <pretix-widget event="https://tickets.zoomin-filmfest.com/"></pretix-widget>
+                <noscript>
+                  <div class="pretix-widget">
+                    <div class="pretix-widget-info-message">
+                      JavaScript is disabled in your browser. To access our ticket shop without JavaScript, please <a target="_blank" rel="noopener" href="https://tickets.zoomin-filmfest.com/">click here</a>.
+                    </div>
+                  </div>
+                </noscript>
 
-    <section class="section newsletter" aria-labelledby="newsletter-title">
-      <div class="container newsletter-inner">
-        <div data-reveal="left">
-          <p class="section-kicker">Notes from the edit room</p>
-          <h2 class="section-title" id="newsletter-title">Join Our <em>Newsletter</em></h2>
-          <p class="newsletter-copy">Stay updated with the latest news from ZIFF.</p>
-        </div>
-        <form class="newsletter-form" method="post" action="https://zoomin-filmfest.com/blog/wp-admin/admin-ajax.php?action=tnp&amp;na=s" data-reveal="right">
-          <input type="hidden" name="nlang" value="">
-          <div class="field-row">
-            <div class="field"><label for="newsletter-name">First name</label><input id="newsletter-name" type="text" name="nn" placeholder="Your name" autocomplete="given-name"></div>
-            <div class="field"><label for="newsletter-email">Email address</label><input id="newsletter-email" type="email" name="ne" placeholder="example@zoomin-filmfest.com" autocomplete="email" required></div>
-          </div>
-          <label class="consent-check" for="newsletter-privacy"><input id="newsletter-privacy" type="checkbox" name="ny" required><span>I accept the <a href="https://zoomin-filmfest.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.</span></label>
-          <button class="button" type="submit">Subscribe <span aria-hidden="true">↗</span></button>
-        </form>
-      </div>
-    </section>
+              <!--<div class="mbr-section-btn mt-5">
+                  <a class="btn btn-outline-primary" href="https://ticketing.connecteens.org/connecteens/LeadUP-1/redeem?voucher=STAFFREG">Register as Staff</a>
+                  <a class="btn btn-outline-primary" href="https://ticketing.connecteens.org/connecteens/LeadUP-1/redeem?voucher=PRESSREG">Register as Press</a>
+              </div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-    <section class="section gallery-section" aria-labelledby="gallery-title">
-      <div class="container">
-        <div class="gallery-topline" data-reveal>
-          <div><p class="section-kicker">A few frames from our first edition</p><h2 class="section-title" id="gallery-title">The <em>gallery</em></h2></div>
-          <a class="button button--outline" href="../gallery.html">See All Gallery <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="gallery-grid" id="gallery-grid">
-          <button class="gallery-tile" type="button" data-index="0" aria-label="Open gallery image 1"><img src="../assets/images/img-622-921x614.webp" alt="ZIFF GALLERY IMAGE" loading="lazy"></button>
-          <button class="gallery-tile" type="button" data-index="1" aria-label="Open gallery image 2"><img src="../assets/images/img-631-921x614.webp" alt="ZIFF GALLERY IMAGE" loading="lazy"></button>
-          <button class="gallery-tile" type="button" data-index="2" aria-label="Open gallery image 3"><img src="../assets/images/img-427-921x614.webp" alt="ZIFF GALLERY IMAGE" loading="lazy"></button>
-          <button class="gallery-tile" type="button" data-index="3" aria-label="Open gallery image 4"><img src="../assets/images/img-395-921x614.webp" alt="ZIFF GALLERY IMAGE" loading="lazy"></button>
-          <button class="gallery-tile" type="button" data-index="4" aria-label="Open gallery image 5"><img src="../assets/images/img-603-921x614.webp" alt="ZIFF GALLERY IMAGE" loading="lazy"></button>
-          <button class="gallery-tile" type="button" data-index="5" aria-label="Open gallery image 6"><img src="../assets/images/img-634-921x614.webp" alt="ZIFF GALLERY IMAGE" loading="lazy"></button>
-          <button class="gallery-tile" type="button" data-index="6" aria-label="Open gallery image 7"><img src="../assets/images/img-660-921x614.webp" alt="ZIFF GALLERY IMAGE" loading="lazy"></button>
-          <button class="gallery-tile" type="button" data-index="7" aria-label="Open gallery image 8"><img src="../assets/images/img-378-921x614.webp" alt="ZIFF GALLERY IMAGE" loading="lazy"></button>
-        </div>
-        <p class="gallery-count">8 glimpses · 43 photographs in the full gallery</p>
-      </div>
-    </section>
-
-    <section class="contact-band" aria-labelledby="contact-title">
-      <div class="container contact-inner" data-reveal>
-        <div><h2 id="contact-title">Contact Us!</h2><p>Send us a message, question, or whatever's on your mind</p></div>
-        <form class="contact-form" id="contact-form" action="../assets/witsec-mailform/mailform.php" method="post">
-          <input type="hidden" name="disableButton" value="1">
-          <input type="hidden" name="subject" value="ZIFF Form Submission">
-          <input type="hidden" name="autorespond" value="1">
-          <div class="field-row">
-            <div class="field"><label for="contact-name">Name</label><input id="contact-name" type="text" name="name" placeholder="John Doe" autocomplete="name" required></div>
-            <div class="field"><label for="contact-email">Email</label><input id="contact-email" type="email" name="email" placeholder="mail@example.com" autocomplete="email" required></div>
-          </div>
-          <div class="field"><label for="contact-subject">Subject</label><input id="contact-subject" type="text" name="Subject-user" placeholder="I require this" required></div>
-          <div class="field"><label for="contact-message">Message</label><textarea id="contact-message" name="Message" placeholder="Hello!...." required></textarea></div>
-          <label class="consent-check" for="contact-gdpr"><input id="contact-gdpr" type="checkbox" name="GDPR" value="1" required><span>By continuing you agree to our <a href="../tos.html">Terms of Service</a> and <a href="../privacy.html">Privacy Policy</a>.</span></label>
-          <p class="consent-check">This form uses Google's reCAPTCHA. By continuing you agree to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms</a>.</p>
-          <p id="contact-status" role="status" aria-live="polite">PLEASE WAIT ON THE PAGE AFTER SUBMITTING FORM FOR 1-2 MINUTES</p>
-          <button class="button" type="submit">Send mail! <span aria-hidden="true">↗</span></button>
-          <noscript><p>JavaScript is required for the protected form. You can also use the <a href="../contact.html">contact page</a>.</p></noscript>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
+<section data-bs-version="5.1" class="gallery3 cid-vcj0CER4nT" id="gallery3-11">
+    
+    
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand"><a class="wordmark" href="#top"><span class="wordmark-text">ZIFF</span></a><p>Dream It. Film it. Create it. Zoom IN!</p><p><a href="https://www.instagram.com/zoomin_filmfest/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.tiktok.com/@zoomin_filmfest" target="_blank" rel="noopener noreferrer">TikTok</a></p></div>
-        <nav class="footer-col" aria-label="Company"><h2>Company</h2><ul><li><a href="../about.html">About</a></li><li><a href="../press.html">Press</a></li><li><a href="../team.html">Team</a></li><li><a href="../join.html">Join the team</a></li><li><a href="../donate.html">Donate!</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../partners.html">Our Partners</a></li></ul></nav>
-        <nav class="footer-col" aria-label="Festival"><h2>Festival</h2><ul><li><a href="../submit.html">Submissions</a></li><li><a href="../past-movies.html">Past movies</a></li><li><a href="../gallery.html">Gallery</a></li><li><a href="../collabs.html">Collaborations</a></li><li><a href="../register.html">Register</a></li><li><a href="https://zoomin-filmfest.com/blog">Blog</a></li></ul></nav>
-        <nav class="footer-col" aria-label="Support and legal"><h2>Support &amp; Legal</h2><ul><li><a href="../help.html">Help</a></li><li><a href="../contact.html">Contacts</a></li><li><a href="../report.html">Report</a></li><li><a href="../rules.html">Rules</a></li><li><a href="../legal.html">Legal Info</a></li><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../tos.html">Terms of Service</a></li><li><a href="../cookies.html">Cookies Policy</a></li><li><button class="manage-cookies" type="button" id="manage-cookies">Manage Cookies</button></li></ul></nav>
-      </div>
-      <hr class="footer-rule">
-      <div class="footer-bottom">
-        <p><span class="credits-label">Powered by:</span> <a href="https://marcparaschiv.com" target="_blank" rel="noopener noreferrer">Marc Paraschiv</a> · Rita Bartos · Johanna Croci<br>© <span id="copyright-year">2026</span> <strong>Asociația Cadru cu Cadru</strong>. All rights reserved. <strong>Zoom In Film Festival (ZIFF)</strong> is a registered trademark.<br>Commercial management, ticketing &amp; website development powered by <a href="https://seasidebranding.com" target="_blank" rel="noopener noreferrer">Seaside Branding</a>.</p>
-        <div class="anpc-links"><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow noopener noreferrer" aria-label="SAL consumer dispute resolution"><img src="https://e-advertising.co/anpc/eadv-sal.png" alt="SAL"></a><a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow noopener noreferrer" aria-label="SOL online dispute resolution"><img src="https://e-advertising.co/anpc/eadv-sol.png" alt="SOL"></a></div>
+        <div class="mbr-section-head">
+            <div class="d-flex justify-content-center align-items-center mb-0">
+                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Meet the judges!</strong></h4>
+                <div class="mbr-section-btn ms-4">
+                    <a class="btn btn-primary display-4" role="button" data-toggle="collapse" data-bs-toggle="collapse" aria-expanded="true" data-target="#team-collapse-" data-bs-target="#team-collapse-" aria-controls="team-collapse-">
+                        <span class="mbr-iconfont" style="margin:auto;">
+                            <svg viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+                                <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-144 144c-9.4 9.4-24.6 9.4-33.9 0l-144-144c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L256 294.1z"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <h1 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7">from ZIFF's 1st edition</h1>
+        </div>
+        <div class="collapse show" id="team-collapse-">
+            <div class="row mt-4">
+            
+            
+            
+            <div class="item features-image сol-12 col-md-6 col-lg-3 active">
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="assets/images/corinauteu.webp" alt="Corina" title="" data-slide-to="8" data-bs-slide-to="8">
+                    </div>
+                    <div class="item-content">
+                        <h1 class="item-title mbr-fonts-style display-5">Corina Șuteu</h1>
+                        
+                        <p class="mbr-text mbr-fonts-style mt-3 text-judge">Corina Șuteu is an international cultural consultant and cultural policy expert with an international career spanning over 30 years in the arts and culture field. She was Minister of Culture in Romania and Director of the Romanian Cultural Institute in New York. Among many other major projects in various sectors of the arts, she founded two film festivals that she produces and whose president she is: Making Waves: New Romanian Cinema and fARAD, an international documentary film festival in Arad. Author of books on cultural management, author of articles in the magazine 22, Dilema, Observator Cultural and international magazines specialized in cultural policies, Corina Șuteu curates the space and programs of Insula 42 and works as an expert for various organizations in Romania and abroad.</p>
+                    </div>
+                    
+                </div>
+            </div><div class="item features-image сol-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="assets/images/mihaimanescu.webp" alt="Mihai" title="" data-slide-to="9" data-bs-slide-to="9">
+                    </div>
+                    <div class="item-content">
+                        <h1 class="item-title mbr-fonts-style display-5">Mihai Mănescu</h1>
+                        
+                        <p class="mbr-text mbr-fonts-style mt-3 text-judge">Mihai Manescu is a screenwriter, author and communication specialist, PhD in Film and Media, founder of Sustin.org. He brings over a decade of teaching and storytelling expertise to our jury, blending hero’s journey insight with film industry and NGO experience.</p>
+                    </div>
+                    
+                </div>
+            </div><div class="item features-image сol-12 col-md-6 col-lg-3">
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="assets/images/paulatudorcmrzan.webp" alt="Paula" title="" data-slide-to="10" data-bs-slide-to="10">
+                    </div>
+                    <div class="item-content">
+                        <h1 class="item-title mbr-fonts-style display-5">Paula Tudor Cămîrzan</h1>
+                        
+                        <p class="mbr-text mbr-fonts-style mt-3 text-judge">Paula Tudor Cămîrzan is a cultural manager and documentary film producer, vice president of the Antistatic Association and coordinator of the Via Danubiana project. She has international experience in documentary production and development, with studies in documentary film and visual anthropology.</p>
+                    </div>
+                    
+                </div>
+            </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section data-bs-version="5.1" class="tnp-newsletter-section cid-vukPQrpbMT" id="witsec-html-block-4u">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        
+        <!-- Card Wrapper -->
+        <div class="tnp-card-wrapper">
+          
+          <h2 class="mbr-section-title mbr-fonts-style align-center mb-2 display-2">
+            Join Our Newsletter
+          </h2>
+          <p class="mbr-section-subtitle mbr-fonts-style align-center mb-4 display-7">
+            Stay updated with the latest news from ZIFF
+          </p>
+
+          <form method="post" action="https://zoomin-filmfest.com/blog/wp-admin/admin-ajax.php?action=tnp&amp;na=s" class="mbr-form">
+            <input type="hidden" name="nlang" value="" id="nlang-witsec-html-block-4u">
+
+            <!-- First Name Field -->
+            <div class="form-group mb-3">
+              <label for="tnp-firstname" class="form-label mbr-fonts-style display-7">First Name</label>
+              <input class="form-control tnp-name mbr-fonts-style display-7" type="text" name="nn" id="nn-witsec-html-block-4u" placeholder="Your name">
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group mb-3">
+              <label for="tnp-email" class="form-label mbr-fonts-style display-7">Email Address</label>
+              <input class="form-control tnp-email mbr-fonts-style display-7" type="email" name="ne" id="ne-witsec-html-block-4u" placeholder="example@zoomin-filmfest.com" required="">
+            </div>
+
+            <!-- Privacy Policy Checkbox -->
+            <div class="form-check mb-4">
+              <input class="form-check-input tnp-privacy" type="checkbox" name="ny" id="ny-witsec-html-block-4u" required="">
+              <label class="form-check-label mbr-fonts-style display-7" for="tnp-privacy">
+                I accept the <a href="https://zoomin-filmfest.com/privacy" target="_blank">privacy policy</a>
+              </label>
+            </div>
+
+            <!-- Subscribe Button -->
+            <div class="mbr-section-btn align-center">
+              <button type="submit" class="btn btn-primary tnp-submit mbr-fonts-style display-7">
+                Subscribe
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <aside class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-title" aria-describedby="cookie-copy" hidden>
-    <h2 id="cookie-title">Politica de Cookie-uri / Cookie Policy</h2>
-    <p id="cookie-copy">Folosim cookie-uri necesare pentru funcționarea site-ului și sistemul de bilete <strong>Pretix</strong>, plus <strong>Google Analytics</strong> pentru analiză. Detalii în <a href="../cookies.html">Politica de Cookie-uri</a>.</p>
-    <div class="cookie-actions"><button id="cookie-decline" type="button">Refuză / Decline</button><button id="cookie-accept" type="button">Accept Toate / Accept All</button></div>
-  </aside>
+<section data-bs-version="5.1" class="gallery4 cid-vciTzyAT8a" id="gallery04-10">
+  
+  
+  <div class="container-fluid gallery-wrapper">
+    <div class="row justify-content-center">
+      <div class="col-12 content-head">
+        <div class="mbr-section-head mb-5">
+          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Gallery</strong></h4>
+          
+        </div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-container-1" style="transform: translate3d(-200px, 0px, 0px);">
+        <div class="grid-item">
+          <img src="assets/images/img-622-921x614.webp" alt="ZIFF GALLERY IMAGE">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/img-631-921x614.webp" alt="ZIFF GALLERY IMAGE">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/img-427-921x614.webp" alt="ZIFF GALLERY IMAGE">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/img-395-921x614.webp" alt="ZIFF GALLERY IMAGE">
+        </div>
+      </div>
+      <div class="grid-container-2" style="transform: translate3d(-70px, 0px, 0px);">
+        <div class="grid-item">
+          <img src="assets/images/img-603-921x614.webp" alt="ZIFF GALLERY IMAGE">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/img-634-921x614.webp" alt="ZIFF GALLERY IMAGE">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/img-660-921x614.webp" alt="ZIFF GALLERY IMAGE">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/img-378-921x614.webp" alt="ZIFF GALLERY IMAGE">
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-12 d-flex justify-content-center">
+        <div class="mbr-section-btn"><a class="btn btn-success display-4" href="gallery.html" target="_blank">See All Gallery</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <dialog class="lightbox" id="lightbox" aria-label="ZIFF gallery viewer">
-    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close gallery">×</button>
-    <figure><div class="lightbox-image"><img id="lightbox-image" alt=""></div><figcaption class="lightbox-caption"><span id="lightbox-caption">ZIFF gallery image</span><span class="lightbox-controls"><button id="lightbox-prev" type="button" aria-label="Previous image">←</button><button id="lightbox-next" type="button" aria-label="Next image">→</button></span></figcaption></figure>
-  </dialog>
+<section class="witsec-mailform mbr-section cid-vcDJgiskk2" id="witsec-mailform-builder-17">
 
-  <script>
-    document.documentElement.classList.add('js');
+  
 
-    const introFilm = document.getElementById('intro-film');
-    if (document.documentElement.classList.contains('intro-pending')) {
-      const introSkip = document.getElementById('intro-skip');
-      const backgroundRegions = [...document.querySelectorAll('.site-header, main, .site-footer')];
-      backgroundRegions.forEach((region) => { region.inert = true; });
-      let introTimer;
-      let crewTimer;
-      function dismissIntro() {
-        if (!document.documentElement.classList.contains('intro-pending')) return;
-        window.clearTimeout(introTimer);
-        window.clearTimeout(crewTimer);
-        introFilm.classList.add('is-done');
-        backgroundRegions.forEach((region) => { region.inert = false; });
-        document.removeEventListener('keydown', handleIntroKey);
-        window.setTimeout(() => {
-          document.documentElement.classList.remove('intro-pending');
-          introFilm.remove();
-        }, 560);
-      }
-      function handleIntroKey(event) {
-        if (event.key === 'Escape') dismissIntro();
-      }
-      introSkip.addEventListener('click', dismissIntro);
-      document.addEventListener('keydown', handleIntroKey);
-      introSkip.focus({ preventScroll: true });
-      crewTimer = window.setTimeout(() => document.querySelector('.intro-crew').classList.add('is-active'), 720);
-      introTimer = window.setTimeout(dismissIntro, 6000);
-    }
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="title col-12 col-lg-8">
+        <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
+          Contact Us!</h2>
+        <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">Send us a message, question, or whatever's on your mind</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="media-container-column col-lg-8">
+          <form class="mbr-form">
+<input type="hidden" name="disableButton" value="1">
+            
+            <input type="hidden" name="subject" value="ZIFF Form Submission" id="subject-witsec-mailform-builder-17">
+            <input type="hidden" name="autorespond" value="1" id="autorespond-witsec-mailform-builder-17">
+            
+            
+            
 
-    const revealItems = document.querySelectorAll('[data-reveal]');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if ('IntersectionObserver' in window && !reducedMotion) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      revealItems.forEach((item) => revealObserver.observe(item));
-    } else {
-      revealItems.forEach((item) => item.classList.add('is-visible'));
-    }
+            <div class="rowflexrev flex-column">
+              <div class="row">
+                <div class="col-md-12 form-group ws-form-alerts">
+                  <div hidden="hidden" class="alert alert-success col-12 mbr-alert-success mbr-fonts-style display-7">Thanks for filling out the form! Your Email has been sent</div>
+                  <div hidden="hidden" class="alert alert-danger col-12 mbr-alert-danger mbr-fonts-style display-7">An error occurred. Please try again.</div>
+                </div>
+              </div>
 
-    const header = document.getElementById('site-header');
-    const progressValue = document.getElementById('progress-value');
-    let previousScroll = window.scrollY;
-    window.addEventListener('scroll', () => {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-      progressValue.style.width = `${progress}%`;
-      if (window.innerWidth > 760 && window.scrollY > 140 && window.scrollY > previousScroll + 4) header.classList.add('is-hidden');
-      if (window.scrollY < previousScroll - 4 || window.scrollY < 50) header.classList.remove('is-hidden');
-      previousScroll = window.scrollY;
-    }, { passive: true });
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
 
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    function closeMenu() {
-      navLinks.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Open menu');
-      menuToggle.textContent = '☰';
-      document.body.classList.remove('menu-open');
-    }
-    menuToggle.addEventListener('click', () => {
-      const willOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
-      menuToggle.setAttribute('aria-expanded', String(willOpen));
-      menuToggle.setAttribute('aria-label', willOpen ? 'Close menu' : 'Open menu');
-      menuToggle.textContent = willOpen ? '×' : '☰';
-      navLinks.classList.toggle('is-open', willOpen);
-      document.body.classList.toggle('menu-open', willOpen);
-    });
-    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-    window.addEventListener('resize', () => { if (window.innerWidth > 760) closeMenu(); });
+<div class="col-md-4 form-group col-md-6"> <p class="mbr-section-labels mbr-text mbr-fonts-style display-7">Name</p> <input type="text" class="form-control display-7" name="name" id="name-witsec-mailform-builder-17" placeholder="John Doe" required></div><div class="col-md-4 form-group col-md-6"> <p class="mbr-section-labels mbr-text mbr-fonts-style display-7">Email</p>  <input type="email" class="form-control display-7" name="email" id="email-witsec-mailform-builder-17" placeholder="mail@example.com" required></div>
+<div class="col-md-3 form-group col-md-12"> <p class="mbr-section-labels mbr-text mbr-fonts-style display-7">Subject</p> <input class="form-control display-7" type="text" name="Subject-user" id="Subject-user-witsec-mailform-builder-17" placeholder="I require this" required>    </div>
+<div class="col-md-12 form-group"> <p class="mbr-section-labels mbr-text mbr-fonts-style display-7">Message</p> <textarea class="form-control display-7" name="Message" id="Message-witsec-mailform-builder-17" placeholder="Hello!...." required></textarea>                                        </div>
 
-    const paths = {
-      film: { copy: 'find out how to submit your movie.', label: 'Explore submissions', href: '../submit.html' },
-      watch: { copy: 'step into the gallery and past films.', label: 'Explore the stories', href: '../gallery.html' },
-      heritage: { copy: 'discover the festival’s connection to Roșia Montană.', label: 'Discover the story', href: '../about.html' }
-    };
-    const choiceButtons = [...document.querySelectorAll('[data-path]')];
-    const routeCopy = document.getElementById('route-copy');
-    const routeLink = document.getElementById('route-link');
-    function choosePath(key) {
-      const path = paths[key];
-      choiceButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.path === key)));
-      routeCopy.innerHTML = `<strong>Your next scene:</strong> ${path.copy}`;
-      routeLink.href = path.href;
-      routeLink.innerHTML = `${path.label} <span aria-hidden="true">→</span>`;
-    }
-    choiceButtons.forEach((button) => button.addEventListener('click', () => choosePath(button.dataset.path)));
-    document.getElementById('route-shuffle').addEventListener('click', () => {
-      const choices = choiceButtons.map((button) => button.dataset.path).filter((key) => !choiceButtons.find((button) => button.dataset.path === key).matches('[aria-pressed="true"]'));
-      choosePath(choices[Math.floor(Math.random() * choices.length)]);
-    });
 
-    const galleryImages = [...document.querySelectorAll('.gallery-tile img')].map((image) => ({ src: image.src, alt: image.alt }));
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    let activeImage = 0;
-    function showGalleryImage(index) {
-      activeImage = (index + galleryImages.length) % galleryImages.length;
-      const image = galleryImages[activeImage];
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
-      lightboxCaption.textContent = `Frame ${activeImage + 1} of ${galleryImages.length} · ZIFF gallery`;
-    }
-    document.querySelectorAll('.gallery-tile').forEach((tile) => tile.addEventListener('click', () => {
-      showGalleryImage(Number(tile.dataset.index));
-      lightbox.showModal();
-    }));
-    document.getElementById('lightbox-close').addEventListener('click', () => lightbox.close());
-    document.getElementById('lightbox-prev').addEventListener('click', () => showGalleryImage(activeImage - 1));
-    document.getElementById('lightbox-next').addEventListener('click', () => showGalleryImage(activeImage + 1));
-    lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
-    lightbox.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowLeft') showGalleryImage(activeImage - 1);
-      if (event.key === 'ArrowRight') showGalleryImage(activeImage + 1);
-    });
 
-    const cookieBanner = document.getElementById('cookie-banner');
-    function loadAnalytics() {
-      if (window.ziffAnalyticsLoaded) return;
-      window.ziffAnalyticsLoaded = true;
+
+
+
+
+
+
+
+                  </div>
+                </div>
+                <div class="col-md-12 justify-content-center form-group">
+                  
+                  <p class="mbr-section-gdpr mbr-text mbr-fonts-style display-7">
+                    <input type="checkbox" name="GDPR" value="1" required="" id="GDPR-witsec-mailform-builder-17">
+                    <label class="mbr-section-gdpr mbr-fonts-style">By continuing you agree to our <a href="tos.html" class="text-primary">Terms of Service</a> and <a href="privacy.html" class="text-primary">Privacy Policy</a>.</label></p>
+                </div>
+                <div class="col-md-12 justify-content-center form-group">
+                  <p class="mbr-section-terms mbr-text mbr-fonts-style display-7">
+                    This form uses Google's reCAPTCHA. By continuing you agree to the <a href="https://policies.google.com/privacy" target="_blank">Privacy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms</a>.<br><strong>PLEASE WAIT ON THE PAGE AFTER SUBMITTING FORM FOR 1-2 MINUTES</strong></p>
+                </div>
+                
+                <div class="col-md-12 input-group-btn align-center"><button type="submit" class="btn btn-form btn-info-outline display-4">Send mail!</button></div>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script>var witsecRcpSitekey = "6Leb1pctAAAAAPi_bV5yrFES5LSG1ZF2qB6DSfHr";</script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Leb1pctAAAAAPi_bV5yrFES5LSG1ZF2qB6DSfHr"></script>
+<style>.grecaptcha-badge { visibility:hidden; opacity:0; }</style></section>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" class="cid-vuJvLP9Ajm" id="footer01-8CH4gOZEDg-kpcg41kPzB-8F8fe5ClMb-sQjG6uG0Tu-gEz872fvnx-KWgsJNnZ24-53" data-rv-view="769"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" class="cid-vuJvLP9Ajm" id="footer01-8CH4gOZEDg-kpcg41kPzB-8F8fe5ClMb-sQjG6uG0Tu-gEz872fvnx-KWgsJNnZ24-53" data-rv-view="769"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" class="cid-vuJvLP9Ajm" id="footer01-8CH4gOZEDg-kpcg41kPzB-8F8fe5ClMb-sQjG6uG0Tu-gEz872fvnx-KWgsJNnZ24-53" data-rv-view="769"><section data-bs-version="5.1" class="footer1 cid-vuJvLP9Ajm" once="footers" id="footer01-8CH4gOZEDg-kpcg41kPzB-8F8fe5ClMb-sQjG6uG0Tu-gEz872fvnx-KWgsJNnZ24-53">
+  
+
+  
+  
+  <div class="container">
+    <div class="row mbr-white align-items-start">
+
+      <!-- Left Column: Navigation Quick Links -->
+      <div class="col-12 col-md-8">
+        <div class="row g-3">
+          <div class="col-4">
+            <h5 class="mbr-section-subtitle mbr-fonts-style mb-2"><strong>Company</strong></h5>
+            <ul class="list-unstyled footer-list mb-0">
+              <li><a href="about.html" class="footer-link">About</a></li>
+              <li><a href="press.html" class="footer-link">Press</a></li>
+              <li><a href="team.html" class="footer-link">Team</a></li>
+              <li><a href="join.html" class="footer-link">Join the team</a></li>
+              <li><a href="donate.html" class="footer-link highlight-link">Donate!</a></li>
+              <li><a href="contact.html" class="footer-link">Contact</a></li>
+              <li><a href="partners.html" class="footer-link">Our Partners</a></li>
+            </ul>
+          </div>
+
+          <div class="col-4">
+            <h5 class="mbr-section-subtitle mbr-fonts-style mb-2"><strong>Features</strong></h5>
+            <ul class="list-unstyled footer-list mb-0">
+              <li><a href="submit.html" class="footer-link">Submissions</a></li>
+              <li><a href="past-movies.html" class="footer-link">Past movies</a></li>
+              <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+              <li><a href="collabs.html" class="footer-link">Collaborations</a></li>
+              <li><a href="register.html" class="footer-link">Register</a></li>
+              <li><a href="https://zoomin-filmfest.com/blog" class="footer-link">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-4">
+            <h5 class="mbr-section-subtitle mbr-fonts-style mb-2"><strong>Support &amp; Legal</strong></h5>
+            <ul class="list-unstyled footer-list mb-0">
+              <li><a href="help.html" class="footer-link">Help</a></li>
+              <li><a href="contact.html" class="footer-link">Contacts</a></li>
+              <li><a href="report.html" class="footer-link">Report</a></li>
+              <li><a href="rules.html" class="footer-link">Rules</a></li>
+              <li><a href="/legal" class="footer-link">Legal Info</a></li>
+              <!--<li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+              <li><a href="/tos" class="footer-link">Terms of Service</a></li>
+              <li><a href="cookies.html" class="footer-link">Cookies Policy</a></li>-->
+              <!-- BUTON PENTRU RE-DESCHIDERE POP-UP -->
+              <li><a href="javascript:void(0)" onclick="localStorage.removeItem('cookie_consent'); var b=document.getElementById('cookie-banner'); if(b) b.style.display='block';" class="footer-link highlight-cookie">🍪 Manage Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Direct CTA & ANPC Links -->
+      <div class="col-12 col-md-4 mt-3 mt-md-0 d-flex flex-column align-items-md-end align-items-start justify-content-between">
+        <div class="mbr-section-btn mb-3 my-0">
+          <a class="btn btn-register" href="register.html">Register Now</a>
+        </div>
+
+        <!-- Compact ANPC Banners -->
+        <div class="anpc-banners my-2 text-md-end">
+          <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow">
+            <img loading="lazy" src="https://e-advertising.co/anpc/eadv-sal.png" alt="SAL">
+          </a>
+          <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow">
+            <img loading="lazy" src="https://e-advertising.co/anpc/eadv-sol.png" alt="SOL">
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider line -->
+      <div class="col-12 my-3">
+        <hr class="footer-hr m-0">
+      </div>
+
+      <!-- Compact Horizontal Inline Team Credits -->
+      <div class="col-12 text-center mb-2">
+        <p class="credits-inline mb-0">
+          <span class="credits-label">Powered by:</span>
+          <a href="https://marcparaschiv.com" target="_blank" class="footer-link">Marc Paraschiv</a>&nbsp;• Rita Bartos&nbsp;• Johanna Croci&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+      </div>
+
+      <!-- Compact Copyright -->
+      <div class="col-12 text-center">
+        <p class="copyright mb-0">
+          © <script>document.write(new Date().getFullYear());</script> <strong>Asociația Cadru cu Cadru</strong>. All rights reserved. <strong>Zoom In Film Festival (ZIFF)</strong> is a registered trademark.<br>
+          Commercial management, ticketing &amp; website development powered by <a href="https://seasidebranding.com" class="footer-link fw-bold" target="_blank">Seaside Branding</a>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section><section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section><script src="assets/witsec-jquery-3.5.1/jquery-3.5.1.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/scrollgallery/scroll-gallery.js"></script>  <script src="assets/witsec-mailform/mailform.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  <!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 520px; background-color: #FF8F7A; color: #550000; padding: 22px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); z-index: 99999; font-family: 'Inter', -apple-system, sans-serif; border: 2px solid #550000;">
+  
+  <h5 style="color: #550000; margin-top: 0; margin-bottom: 10px; font-weight: 800; font-size: 1.15rem; font-family: 'Montserrat', sans-serif;">
+    🍪 Politica de Cookie-uri / Cookie Policy
+  </h5>
+  
+  <p style="font-size: 0.88rem; line-height: 1.45; margin-bottom: 16px; color: #550000; font-weight: 500;">
+    Folosim cookie-uri necesare pentru funcționarea site-ului și sistemul de bilete 
+    <b style="color: #241E4E; background: #DCDEFF; padding: 1px 5px; border-radius: 4px;">Pretix</b>, plus 
+    <b style="color: #550000; background: #FFD700; padding: 1px 5px; border-radius: 4px;">Google Analytics</b> pentru analiză. 
+    Detalii în <a href="cookies.html" style="color: #241E4E; font-weight: 700; text-decoration: underline;">Politica de Cookie-uri</a>.
+  </p>
+  
+  <div style="display: flex; gap: 10px; justify-content: flex-end; align-items: center; flex-wrap: wrap;">
+    <button id="btn-decline" style="background: transparent; border: 1.5px solid #550000; color: #550000; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+      Refuză / Decline
+    </button>
+    
+    <button id="btn-accept" style="background: #241E4E; border: none; color: #DCDEFF; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.2s;">
+      Accept Toate / Accept All
+    </button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // Înlocuiește cu ID-ul tău real Google Analytics (ex: G-6H26HJNXGW)
+    var GA_MEASUREMENT_ID = 'G-6H26HJNXGW'; 
+
+    function loadGoogleAnalytics() {
+      if (window.gaLoaded) return;
+      window.gaLoaded = true;
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+      document.head.appendChild(script);
+
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){ window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', 'G-6H26HJNXGW');
-      const analyticsScript = document.createElement('script');
-      analyticsScript.async = true;
-      analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6H26HJNXGW';
-      document.head.appendChild(analyticsScript);
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID);
     }
-    let savedConsent = null;
-    try { savedConsent = localStorage.getItem('cookie_consent'); } catch (_) { /* Storage may be unavailable. */ }
-    if (savedConsent === 'accepted') loadAnalytics();
-    if (!savedConsent) cookieBanner.hidden = false;
-    function saveConsent(value) {
-      try { localStorage.setItem('cookie_consent', value); } catch (_) { /* Keep the current choice for this page view. */ }
-      cookieBanner.hidden = true;
-      if (value === 'accepted') loadAnalytics();
-    }
-    document.getElementById('cookie-accept').addEventListener('click', () => saveConsent('accepted'));
-    document.getElementById('cookie-decline').addEventListener('click', () => saveConsent('declined'));
-    document.getElementById('manage-cookies').addEventListener('click', () => { cookieBanner.hidden = false; document.getElementById('cookie-accept').focus(); });
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const submitButton = contactForm.querySelector('[type="submit"]');
-        const status = document.getElementById('contact-status');
-        submitButton.disabled = true;
-        status.textContent = 'Preparing your message…';
-        try {
-          const siteKey = '6Leb1pctAAAAAPi_bV5yrFES5LSG1ZF2qB6DSfHr';
-          await new Promise((resolve, reject) => {
-            if (window.grecaptcha) return resolve();
-            const script = document.createElement('script');
-            script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-          });
-          const token = await new Promise((resolve) => window.grecaptcha.ready(() => window.grecaptcha.execute(siteKey, { action: 'homepage' }).then(resolve)));
-          const payload = new FormData(contactForm);
-          payload.set('g-recaptcha-response', token);
-          const response = await fetch(new URL('../assets/witsec-mailform/mailform.php', window.location.href), { method: 'POST', body: payload });
-          const result = await response.json();
-          if (!response.ok || !result.success) throw new Error(result.message || 'The message could not be sent.');
-          contactForm.reset();
-          status.textContent = 'Thanks for filling out the form! Your email has been sent.';
-        } catch (error) {
-          status.textContent = 'We could not send that just now. Please use the contact page or email contact@zoomin-filmfest.com.';
-        } finally {
-          submitButton.disabled = false;
-        }
+    // Verificare consimțământ salvat
+    var consent = localStorage.getItem('cookie_consent');
+    var banner = document.getElementById('cookie-banner');
+
+    if (consent === 'accepted') {
+      loadGoogleAnalytics();
+    } else if (!consent) {
+      banner.style.display = 'block';
+    }
+
+    // Event Listeners pentru Butoane
+    document.getElementById('btn-accept').addEventListener('click', function() {
+      localStorage.setItem('cookie_consent', 'accepted');
+      banner.style.display = 'none';
+      loadGoogleAnalytics();
+    });
+
+    document.getElementById('btn-decline').addEventListener('click', function() {
+      localStorage.setItem('cookie_consent', 'declined');
+      banner.style.display = 'none';
+    });
+  })();
+</script>
+
+<script>
+  function closeNewsletterPopup() {
+    document.getElementById('global-newsletter-popup').style.display = 'none';
+    
+    // Set a timestamp so the popup doesn't reappear for 14 days after dismissal
+    var hideUntil = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days in ms
+    localStorage.setItem('ziff_newsletter_dismissed_until', hideUntil);
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.getElementById('global-newsletter-popup');
+    var form = popup ? popup.querySelector('form') : null;
+
+    // 1. Never show if the user has already subscribed
+    if (localStorage.getItem('ziff_newsletter_subscribed') === 'true') {
+      return;
+    }
+
+    // 2. Check if the dismissal cooldown is still active
+    var dismissedUntil = localStorage.getItem('ziff_newsletter_dismissed_until');
+    if (dismissedUntil && new Date().getTime() < parseInt(dismissedUntil, 10)) {
+      return;
+    }
+
+    // 3. Mark as subscribed when the form is submitted
+    if (form) {
+      form.addEventListener('submit', function() {
+        localStorage.setItem('ziff_newsletter_subscribed', 'true');
       });
     }
-  </script>
-</body>
+
+    // 4. Delay initial appearance (5 seconds instead of 2 for better UX)
+    setTimeout(function() {
+      if (popup) {
+        popup.style.display = 'flex';
+      }
+    }, 5000);
+  });
+</script>
+  
+  <input name="animation" type="hidden">
+  </body>
 </html>

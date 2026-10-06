@@ -1,0 +1,27 @@
+{
+  "name": "ziff-site-rewrite",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "predev": "node scripts/prepare-public.mjs",
+    "dev": "astro dev",
+    "prebuild": "node scripts/prepare-public.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "manifest": "node scripts/build-source-manifest.mjs",
+    "logo": "node scripts/extract-logo.mjs",
+    "icon": "node --max-old-space-size=3072 scripts/extract-icon.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.3.5",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0",
+    "parse5": "^8.0.1",
+    "pngjs": "^7.0.0"
+  }
+}
